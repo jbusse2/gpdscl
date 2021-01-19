@@ -1,0 +1,506 @@
+@prefix : <http://jbusse.de/ontology/mm2owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://jbusse.de/ontologies/gpdscl> a owl:Ontology ;
+    owl:sameAs <http://jbusse.de/ontologies/gpdscl> .
+
+rdf:HTML a rdfs:Datatype ;
+    owl:sameAs rdf:HTML .
+
+rdf:LangString a rdfs:Datatype ;
+    owl:sameAs rdf:LangString .
+
+rdf:PlainLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:PlainLiteral .
+
+rdf:XMLLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:XMLLiteral .
+
+rdf:first owl:sameAs rdf:first .
+
+rdf:rest owl:sameAs rdf:rest .
+
+rdf:type owl:sameAs rdf:type .
+
+rdfs:Literal a rdfs:Datatype ;
+    owl:sameAs rdfs:Literal .
+
+rdfs:comment a owl:AnnotationProperty ;
+    owl:sameAs rdfs:comment .
+
+rdfs:isDefinedBy a owl:AnnotationProperty ;
+    owl:sameAs rdfs:isDefinedBy .
+
+rdfs:label a owl:AnnotationProperty ;
+    owl:sameAs rdfs:label .
+
+rdfs:seeAlso a owl:AnnotationProperty ;
+    owl:sameAs rdfs:seeAlso .
+
+rdfs:subClassOf owl:sameAs rdfs:subClassOf .
+
+rdfs:subPropertyOf owl:sameAs rdfs:subPropertyOf .
+
+xsd:NCName a rdfs:Datatype ;
+    owl:sameAs xsd:NCName .
+
+xsd:NMTOKEN a rdfs:Datatype ;
+    owl:sameAs xsd:NMTOKEN .
+
+xsd:Name a rdfs:Datatype ;
+    owl:sameAs xsd:Name .
+
+xsd:anyURI a rdfs:Datatype ;
+    owl:sameAs xsd:anyURI .
+
+xsd:base64Binary a rdfs:Datatype ;
+    owl:sameAs xsd:base64Binary .
+
+xsd:boolean a rdfs:Datatype ;
+    owl:sameAs xsd:boolean .
+
+xsd:byte a rdfs:Datatype ;
+    owl:sameAs xsd:byte .
+
+xsd:date a rdfs:Datatype ;
+    owl:sameAs xsd:date .
+
+xsd:dateTime a rdfs:Datatype ;
+    owl:sameAs xsd:dateTime .
+
+xsd:dateTimeStamp a rdfs:Datatype ;
+    owl:sameAs xsd:dateTimeStamp .
+
+xsd:decimal a rdfs:Datatype ;
+    owl:sameAs xsd:decimal .
+
+xsd:double a rdfs:Datatype ;
+    owl:sameAs xsd:double .
+
+xsd:float a rdfs:Datatype ;
+    owl:sameAs xsd:float .
+
+xsd:hexBinary a rdfs:Datatype ;
+    owl:sameAs xsd:hexBinary .
+
+xsd:int a rdfs:Datatype ;
+    owl:sameAs xsd:int .
+
+xsd:integer a rdfs:Datatype ;
+    owl:sameAs xsd:integer .
+
+xsd:language a rdfs:Datatype ;
+    owl:sameAs xsd:language .
+
+xsd:long a rdfs:Datatype ;
+    owl:sameAs xsd:long .
+
+xsd:negativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:negativeInteger .
+
+xsd:nonNegativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonNegativeInteger .
+
+xsd:nonPositiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonPositiveInteger .
+
+xsd:normalizedString a rdfs:Datatype ;
+    owl:sameAs xsd:normalizedString .
+
+xsd:positiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:positiveInteger .
+
+xsd:short a rdfs:Datatype ;
+    owl:sameAs xsd:short .
+
+xsd:string a rdfs:Datatype ;
+    owl:sameAs xsd:string .
+
+xsd:time a rdfs:Datatype ;
+    owl:sameAs xsd:time .
+
+xsd:token a rdfs:Datatype ;
+    owl:sameAs xsd:token .
+
+xsd:unsignedByte a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedByte .
+
+xsd:unsignedInt a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedInt .
+
+xsd:unsignedLong a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedLong .
+
+xsd:unsignedShort a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedShort .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:backwardCompatibleWith .
+
+owl:deprecated a owl:AnnotationProperty ;
+    owl:sameAs owl:deprecated .
+
+owl:equivalentClass owl:sameAs owl:equivalentClass .
+
+owl:equivalentProperty owl:sameAs owl:equivalentProperty .
+
+owl:incompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:incompatibleWith .
+
+owl:intersectionOf owl:sameAs owl:intersectionOf .
+
+owl:onProperty owl:sameAs owl:onProperty .
+
+owl:priorVersion a owl:AnnotationProperty ;
+    owl:sameAs owl:priorVersion .
+
+owl:sameAs owl:sameAs owl:sameAs .
+
+owl:someValuesFrom owl:sameAs owl:someValuesFrom .
+
+owl:versionInfo a owl:AnnotationProperty ;
+    owl:sameAs owl:versionInfo .
+
+owl:ObjectProperty owl:sameAs owl:ObjectProperty .
+
+owl:Ontology owl:sameAs owl:Ontology .
+
+owl:Nothing a owl:Class ;
+    rdfs:subClassOf _:ub2bL104C29,
+        _:ub2bL110C29,
+        _:ub2bL32C29,
+        _:ub2bL38C29,
+        _:ub2bL56C29,
+        _:ub2bL62C29,
+        _:ub2bL80C29,
+        _:ub2bL86C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:eutroph,
+        :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph,
+        :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph,
+        :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph,
+        :ID_1260890827,
+        :ID_1784703466,
+        :ID_340097028,
+        :ID_440590526,
+        :SOME_:Trophiestufe_:eutroph,
+        :SOME_:Trophiestufe_:hypertroph,
+        :SOME_:Trophiestufe_:mesotroph,
+        :SOME_:Trophiestufe_:oligotroph,
+        :Trophiestufe,
+        :eutroph,
+        :hypertroph,
+        :mesotroph,
+        :oligotroph,
+        owl:Nothing,
+        owl:Thing ;
+    owl:equivalentClass owl:Nothing ;
+    owl:sameAs owl:Nothing .
+
+() owl:sameAs () .
+
+owl:NamedIndividual owl:sameAs owl:NamedIndividual .
+
+owl:Restriction owl:sameAs owl:Restriction .
+
+:Gewässer_AND_:SOME_:Trophiestufe_:eutroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL80C29,
+        _:ub2bL86C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:eutroph,
+        :ID_340097028,
+        :SOME_:Trophiestufe_:eutroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL86C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:eutroph ;
+    owl:sameAs :Gewässer_AND_:SOME_:Trophiestufe_:eutroph .
+
+:Gewässer_AND_:SOME_:Trophiestufe_:hypertroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL104C29,
+        _:ub2bL110C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph,
+        :ID_1784703466,
+        :SOME_:Trophiestufe_:hypertroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL110C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph ;
+    owl:sameAs :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph .
+
+:Gewässer_AND_:SOME_:Trophiestufe_:mesotroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL56C29,
+        _:ub2bL62C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph,
+        :ID_440590526,
+        :SOME_:Trophiestufe_:mesotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL62C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph ;
+    owl:sameAs :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph .
+
+:Gewässer_AND_:SOME_:Trophiestufe_:oligotroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL32C29,
+        _:ub2bL38C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph,
+        :ID_1260890827,
+        :SOME_:Trophiestufe_:oligotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL38C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph ;
+    owl:sameAs :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph .
+
+:ID_1260890827 a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :ID_1260890827,
+        owl:Thing ;
+    owl:equivalentClass :ID_1260890827 ;
+    owl:sameAs :ID_1260890827 .
+
+:ID_1784703466 a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :ID_1784703466,
+        owl:Thing ;
+    owl:equivalentClass :ID_1784703466 ;
+    owl:sameAs :ID_1784703466 .
+
+:ID_340097028 a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :ID_340097028,
+        owl:Thing ;
+    owl:equivalentClass :ID_340097028 ;
+    owl:sameAs :ID_340097028 .
+
+:ID_440590526 a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :ID_440590526,
+        owl:Thing ;
+    owl:equivalentClass :ID_440590526 ;
+    owl:sameAs :ID_440590526 .
+
+:eutroph a :Trophiestufe,
+        :eutroph,
+        owl:Class,
+        owl:NamedIndividual,
+        owl:Thing ;
+    rdfs:subClassOf :Trophiestufe,
+        :eutroph,
+        owl:Thing ;
+    owl:equivalentClass :eutroph ;
+    owl:sameAs :eutroph .
+
+:hypertroph a :Trophiestufe,
+        :hypertroph,
+        owl:Class,
+        owl:NamedIndividual,
+        owl:Thing ;
+    rdfs:subClassOf :Trophiestufe,
+        :hypertroph,
+        owl:Thing ;
+    owl:equivalentClass :hypertroph ;
+    owl:sameAs :hypertroph .
+
+:mesotroph a :Trophiestufe,
+        :mesotroph,
+        owl:Class,
+        owl:NamedIndividual,
+        owl:Thing ;
+    rdfs:subClassOf :Trophiestufe,
+        :mesotroph,
+        owl:Thing ;
+    owl:equivalentClass :mesotroph ;
+    owl:sameAs :mesotroph .
+
+:oligotroph a :Trophiestufe,
+        :oligotroph,
+        owl:Class,
+        owl:NamedIndividual,
+        owl:Thing ;
+    rdfs:subClassOf :Trophiestufe,
+        :oligotroph,
+        owl:Thing ;
+    owl:equivalentClass :oligotroph ;
+    owl:sameAs :oligotroph .
+
+:SOME_:Trophiestufe_:eutroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL80C29,
+        :SOME_:Trophiestufe_:eutroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL80C29,
+        :SOME_:Trophiestufe_:eutroph ;
+    owl:sameAs :SOME_:Trophiestufe_:eutroph .
+
+:SOME_:Trophiestufe_:hypertroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL104C29,
+        :SOME_:Trophiestufe_:hypertroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL104C29,
+        :SOME_:Trophiestufe_:hypertroph ;
+    owl:sameAs :SOME_:Trophiestufe_:hypertroph .
+
+:SOME_:Trophiestufe_:mesotroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL56C29,
+        :SOME_:Trophiestufe_:mesotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL56C29,
+        :SOME_:Trophiestufe_:mesotroph ;
+    owl:sameAs :SOME_:Trophiestufe_:mesotroph .
+
+:SOME_:Trophiestufe_:oligotroph a owl:Class ;
+    rdfs:subClassOf _:ub2bL32C29,
+        :SOME_:Trophiestufe_:oligotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL32C29,
+        :SOME_:Trophiestufe_:oligotroph ;
+    owl:sameAs :SOME_:Trophiestufe_:oligotroph .
+
+owl:AnnotationProperty owl:sameAs owl:AnnotationProperty .
+
+:Trophiestufe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Trophiestufe ;
+    owl:equivalentProperty :Trophiestufe ;
+    owl:sameAs :Trophiestufe .
+
+:Gewässer a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer ;
+    owl:sameAs :Gewässer .
+
+owl:Class owl:sameAs owl:Class .
+
+owl:Thing a owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass owl:Thing ;
+    owl:sameAs owl:Thing .
+
+rdfs:Datatype owl:sameAs rdfs:Datatype .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab1 rdf:first :Gewässer ;
+    rdf:rest _:fe3abaaadefbb4c7f9f52f40de2e39a6ab2 ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab1 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab2 rdf:first :SOME_:Trophiestufe_:oligotroph ;
+    rdf:rest () ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab2 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab3 rdf:first :Gewässer ;
+    rdf:rest _:fe3abaaadefbb4c7f9f52f40de2e39a6ab4 ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab3 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab4 rdf:first :SOME_:Trophiestufe_:mesotroph ;
+    rdf:rest () ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab4 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab5 rdf:first :Gewässer ;
+    rdf:rest _:fe3abaaadefbb4c7f9f52f40de2e39a6ab6 ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab5 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab6 rdf:first :SOME_:Trophiestufe_:eutroph ;
+    rdf:rest () ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab6 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab7 rdf:first :Gewässer ;
+    rdf:rest _:fe3abaaadefbb4c7f9f52f40de2e39a6ab8 ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab7 .
+
+_:fe3abaaadefbb4c7f9f52f40de2e39a6ab8 rdf:first :SOME_:Trophiestufe_:hypertroph ;
+    rdf:rest () ;
+    owl:sameAs _:fe3abaaadefbb4c7f9f52f40de2e39a6ab8 .
+
+_:ub2bL110C29 a owl:Class ;
+    rdfs:subClassOf _:ub2bL104C29,
+        _:ub2bL110C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph,
+        :ID_1784703466,
+        :SOME_:Trophiestufe_:hypertroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL110C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph ;
+    owl:intersectionOf _:fe3abaaadefbb4c7f9f52f40de2e39a6ab7 ;
+    owl:sameAs _:ub2bL110C29 .
+
+_:ub2bL38C29 a owl:Class ;
+    rdfs:subClassOf _:ub2bL32C29,
+        _:ub2bL38C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph,
+        :ID_1260890827,
+        :SOME_:Trophiestufe_:oligotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL38C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph ;
+    owl:intersectionOf _:fe3abaaadefbb4c7f9f52f40de2e39a6ab1 ;
+    owl:sameAs _:ub2bL38C29 .
+
+_:ub2bL62C29 a owl:Class ;
+    rdfs:subClassOf _:ub2bL56C29,
+        _:ub2bL62C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph,
+        :ID_440590526,
+        :SOME_:Trophiestufe_:mesotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL62C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph ;
+    owl:intersectionOf _:fe3abaaadefbb4c7f9f52f40de2e39a6ab3 ;
+    owl:sameAs _:ub2bL62C29 .
+
+_:ub2bL86C29 a owl:Class ;
+    rdfs:subClassOf _:ub2bL80C29,
+        _:ub2bL86C29,
+        :Gewässer,
+        :Gewässer_AND_:SOME_:Trophiestufe_:eutroph,
+        :ID_340097028,
+        :SOME_:Trophiestufe_:eutroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL86C29,
+        :Gewässer_AND_:SOME_:Trophiestufe_:eutroph ;
+    owl:intersectionOf _:fe3abaaadefbb4c7f9f52f40de2e39a6ab5 ;
+    owl:sameAs _:ub2bL86C29 .
+
+_:ub2bL104C29 a owl:Restriction ;
+    rdfs:subClassOf _:ub2bL104C29,
+        :SOME_:Trophiestufe_:hypertroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL104C29,
+        :SOME_:Trophiestufe_:hypertroph ;
+    owl:onProperty :Trophiestufe ;
+    owl:sameAs _:ub2bL104C29 ;
+    owl:someValuesFrom :hypertroph .
+
+_:ub2bL32C29 a owl:Restriction ;
+    rdfs:subClassOf _:ub2bL32C29,
+        :SOME_:Trophiestufe_:oligotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL32C29,
+        :SOME_:Trophiestufe_:oligotroph ;
+    owl:onProperty :Trophiestufe ;
+    owl:sameAs _:ub2bL32C29 ;
+    owl:someValuesFrom :oligotroph .
+
+_:ub2bL56C29 a owl:Restriction ;
+    rdfs:subClassOf _:ub2bL56C29,
+        :SOME_:Trophiestufe_:mesotroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL56C29,
+        :SOME_:Trophiestufe_:mesotroph ;
+    owl:onProperty :Trophiestufe ;
+    owl:sameAs _:ub2bL56C29 ;
+    owl:someValuesFrom :mesotroph .
+
+_:ub2bL80C29 a owl:Restriction ;
+    rdfs:subClassOf _:ub2bL80C29,
+        :SOME_:Trophiestufe_:eutroph,
+        owl:Thing ;
+    owl:equivalentClass _:ub2bL80C29,
+        :SOME_:Trophiestufe_:eutroph ;
+    owl:onProperty :Trophiestufe ;
+    owl:sameAs _:ub2bL80C29 ;
+    owl:someValuesFrom :eutroph .
+

@@ -1,0 +1,8 @@
+# Book settings
+title: gpdscl
+author: Johannes Busse
+# logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex

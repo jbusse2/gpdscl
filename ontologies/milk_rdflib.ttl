@@ -1,0 +1,35 @@
+@prefix : <http://jbusse.de/ontology/mm2owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://jbusse.de/ontologies/gpdscl> a owl:Ontology .
+
+:goat_milk a owl:Class ;
+    rdfs:subClassOf :milk .
+
+:happy_cow_milk a :milk ;
+    :source :cow .
+
+:milk_AND_:SOME_:source_:cow a owl:Class ;
+    rdfs:subClassOf :cow_milk ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :milk :SOME_:source_:cow ) ] .
+
+:SOME_:source_:cow a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :source ;
+            owl:someValuesFrom :cow ] .
+
+:cow_milk a owl:Class ;
+    rdfs:subClassOf :milk .
+
+:source a owl:ObjectProperty .
+
+:cow a :cow,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:subClassOf :source .
+
+:milk a owl:Class .
+

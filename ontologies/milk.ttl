@@ -1,0 +1,66 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix : <http://jbusse.de/ontologies/gpdscl#> .
+@base <http://jbusse.de/ontologies/gpdscl> .
+<http://jbusse.de/ontologies/gpdscl> rdf:type owl:Ontology .
+
+
+# ONTOLOGY, predicate        ID_393413836 2021-01-19 09:56:08
+
+@prefix : <http://jbusse.de/ontology/mm2owl#> .
+
+# ONTOLOGY, object        ID_1781979295 2021-01-19 09:56:08
+
+:milk a owl:Class.
+
+# BY, predicate        ID_186589694 2021-01-19 09:56:08
+
+:source a owl:ObjectProperty .
+
+# BY, object        ID_1629867687 2021-01-19 09:56:08
+
+:cow_milk a owl:Class ;
+            rdfs:subClassOf :milk .
+
+# SOME, predicate        ID_1425949390 2021-01-19 09:56:08
+
+:SOME_:source_:cow a owl:Class ;
+        owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :source ;
+            owl:someValuesFrom :cow ] .
+
+    :milk_AND_:SOME_:source_:cow a owl:Class ;
+        rdfs:subClassOf :cow_milk ;
+        owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :milk :SOME_:source_:cow ) ] .
+
+    # owl 2 punning
+    :cow a owl:Class ;
+        rdfs:subClassOf :source .
+        
+    :cow rdf:type owl:NamedIndividual ;
+        a :cow .
+
+# BY, object        ID_437290613 2021-01-19 09:56:08
+
+:goat_milk a owl:Class ;
+            rdfs:subClassOf :milk .
+
+# EX, predicate        ID_841812873 2021-01-19 09:56:08
+
+
+# EX, object        ID_1716891840 2021-01-19 09:56:08
+
+:happy_cow_milk a :milk .
+
+# OP, predicate        ID_294461127 2021-01-19 09:56:08
+
+:source a owl:ObjectProperty .
+
+:happy_cow_milk :source :cow .
+    
