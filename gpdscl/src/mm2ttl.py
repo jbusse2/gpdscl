@@ -37,6 +37,11 @@ from xml.etree.ElementTree import Element, SubElement
 from datetime import datetime
 from xml.sax.saxutils import escape, unescape, quoteattr
 
+# %%
+classificationAxioms = False
+restrictionSomeAxioms = False
+owl2punning = True
+
 
 # %% [markdown]
 # ## Einführung (DE)
@@ -321,8 +326,6 @@ def BY(node, elementType, *, gp, dsa, dt):
                 if childIriSome[0] != "":
                     myIri = f"{dt}_{dsa[1:]}_{childIriSome[0][1:]}"
                 
-        
-        
         owlCode = verbose(n, "BY, object", 2)
         owlCode += f"""\n{myIri} a owl:Class ;
             rdfs:subClassOf {dt} ."""
@@ -524,22 +527,26 @@ def SOME(node, elementType, *, gp, dsa, dt):
     andClass  = f"{gp}_AND_{someClass}"  # IRI gets the leading ":" from gp
 
     owlCode = verbose(node, "SOME, predicate", 2)
-    owlCode += f"""\n:{someClass} a owl:Class ;
+
+    if restrictionSomeAxioms:
+        owlCode += f"""\n:{someClass} a owl:Class ;
         owl:equivalentClass [ a owl:Restriction ;
             owl:onProperty {dsa} ;
-            owl:someValuesFrom {dsv} ] .
+            owl:someValuesFrom {dsv} ] ."""
 
-    {andClass} a owl:Class ;
+    if classificationAxioms:
+        owlCode += f"""\n{andClass} a owl:Class ;
         rdfs:subClassOf {dt} ;
         owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( {gp} :{someClass} ) ] .
+            owl:intersectionOf ( {gp} :{someClass} ) ] ."""
 
-    # owl 2 punning
-    {dsv} a owl:Class ;
-        rdfs:subClassOf {dsa} .
+    if owl2punning:
+        owlCode += f"""\n# owl 2 punning
+        {dsv} a owl:Class ;
+            rdfs:subClassOf {dsa} .
         
-    {dsv} rdf:type owl:NamedIndividual ;
-        a {dsv} ."""
+        {dsv} rdf:type owl:NamedIndividual ;
+            a {dsv} ."""
         
     attachToNode(node, owlCode, 'predicate')       
     

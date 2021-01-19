@@ -1,261 +1,8 @@
 @prefix : <http://jbusse.de/ontology/mm2owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://jbusse.de/ontologies/gpdscl> a owl:Ontology .
-
-:Binnengewässer_AND_SOME_Entstehungstyp_IS_künstlich a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Entstehungstyp_künstlich ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entstehungstyp_IS_künstlich ) ] .
-
-:Binnengewässer_AND_SOME_Entstehungstyp_IS_natürlich_entstanden a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Entstehungstyp_natürlich_entstanden ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entstehungstyp_IS_natürlich_entstanden ) ] .
-
-:Binnengewässer_AND_SOME_Entwässerung_IS_endorheisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Entwässerung_endorheisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entwässerung_IS_endorheisch ) ] .
-
-:Binnengewässer_AND_SOME_Entwässerung_IS_exorheisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Entwässerung_exorheisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entwässerung_IS_exorheisch ) ] .
-
-:Binnengewässer_AND_SOME_Gewässerfarbe_IS_dunkeltrüb a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Gewässerfarbe_dunkeltrüb ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Gewässerfarbe_IS_dunkeltrüb ) ] .
-
-:Binnengewässer_AND_SOME_Gewässerfarbe_IS_helltrüb a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Gewässerfarbe_helltrüb ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Gewässerfarbe_IS_helltrüb ) ] .
-
-:Binnengewässer_AND_SOME_Gewässerfarbe_IS_klar a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Gewässerfarbe_klar ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Gewässerfarbe_IS_klar ) ] .
-
-:Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_quellen-artig a owl:Class ;
-    rdfs:subClassOf :Quelle ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_quellen-artig ) ] .
-
-:Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_schwinden-artig a owl:Class ;
-    rdfs:subClassOf :Schwinde ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_schwinden-artig ) ] .
-
-:Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_unterirdisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Lage_des_Wasserkörpers_unterirdisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_unterirdisch ) ] .
-
-:Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_über_der_Erde_liegend a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Lage_des_Wasserkörpers_über_der_Erde_liegend ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_über_der_Erde_liegend ) ] .
-
-:Binnengewässer_AND_SOME_Strömungsverhalten_IS_stehend a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Strömungsverhalten_IS_stehend ) ] .
-
-:Binnengewässer_AND_SOME_Strömungsverhalten_IS_strömend a owl:Class ;
-    rdfs:subClassOf :Fließgewässer ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Strömungsverhalten_IS_strömend ) ] .
-
-:Binnengewässer_AND_SOME_Strömungsverhalten_IS_strömungsfrei a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_strömungsfrei ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Strömungsverhalten_IS_strömungsfrei ) ] .
-
-:Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_ephemer a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_ephemer ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_ephemer ) ] .
-
-:Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_episodisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_episodisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_episodisch ) ] .
-
-:Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_intermittierend a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_intermittierend ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_intermittierend ) ] .
-
-:Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_perennierend a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_perennierend ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_perennierend ) ] .
-
-:Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_periodisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_periodisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_periodisch ) ] .
-
-:Binnengewässer_AND_SOME_Zugänglichkeit_IS_geschlossen a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Zugänglichkeit_geschlossen ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Zugänglichkeit_IS_geschlossen ) ] .
-
-:Binnengewässer_AND_SOME_Zugänglichkeit_IS_offen a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Zugänglichkeit_offen ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Zugänglichkeit_IS_offen ) ] .
-
-:Binnengewässer_Strömungsverhalten_stehend_AND_SOME_Zirkulationstyp_IS_amiktisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_amiktisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer_Strömungsverhalten_stehend :SOME_Zirkulationstyp_IS_amiktisch ) ] .
-
-:Binnengewässer_Strömungsverhalten_stehend_AND_SOME_Zirkulationstyp_IS_holomiktisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_holomiktisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer_Strömungsverhalten_stehend :SOME_Zirkulationstyp_IS_holomiktisch ) ] .
-
-:Binnengewässer_Strömungsverhalten_stehend_AND_SOME_Zirkulationstyp_IS_meromiktisch a owl:Class ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_meromiktisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer_Strömungsverhalten_stehend :SOME_Zirkulationstyp_IS_meromiktisch ) ] .
-
-:Gewässer_AND_SOME_Größe_IS_groß a owl:Class ;
-    rdfs:subClassOf :Gewässer_Größe_groß ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Größe_IS_groß ) ] .
-
-:Gewässer_AND_SOME_Größe_IS_klein a owl:Class ;
-    rdfs:subClassOf :Gewässer_Größe_klein ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Größe_IS_klein ) ] .
-
-:Gewässer_AND_SOME_Größe_IS_sehr_groß a owl:Class ;
-    rdfs:subClassOf :Gewässer_Größe_sehr_groß ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Größe_IS_sehr_groß ) ] .
-
-:Gewässer_AND_SOME_Salzgehalt_IS_brackwasser-artig a owl:Class ;
-    rdfs:subClassOf :Brackwasser ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Salzgehalt_IS_brackwasser-artig ) ] .
-
-:Gewässer_AND_SOME_Salzgehalt_IS_salzwasser-artig a owl:Class ;
-    rdfs:subClassOf :Salzwasser ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Salzgehalt_IS_salzwasser-artig ) ] .
-
-:Gewässer_AND_SOME_Salzgehalt_IS_süßwasser-artig a owl:Class ;
-    rdfs:subClassOf :Süßwasser ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Salzgehalt_IS_süßwasser-artig ) ] .
-
-:Gewässer_AND_SOME_Stellung_im_Gewässersystem_IS_binnen-artig a owl:Class ;
-    rdfs:subClassOf :Binnengewässer ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Stellung_im_Gewässersystem_IS_binnen-artig ) ] .
-
-:Gewässer_AND_SOME_Stellung_im_Gewässersystem_IS_festlandnah a owl:Class ;
-    rdfs:subClassOf :Gewässer_Stellung_im_Gewässersystem_festlandnah ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Stellung_im_Gewässersystem_IS_festlandnah ) ] .
-
-:Gewässer_AND_SOME_Stellung_im_Gewässersystem_IS_meeres-artig a owl:Class ;
-    rdfs:subClassOf :Meer ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Stellung_im_Gewässersystem_IS_meeres-artig ) ] .
-
-:Gewässer_AND_SOME_Sättigung_mit_Wasser_IS_phreatisch a owl:Class ;
-    rdfs:subClassOf :Gewässer_Sättigung_mit_Wasser_phreatisch ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Sättigung_mit_Wasser_IS_phreatisch ) ] .
-
-:Gewässer_AND_SOME_Tiefe_IS_flach a owl:Class ;
-    rdfs:subClassOf :Gewässer_Tiefe_flach ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Tiefe_IS_flach ) ] .
-
-:Gewässer_AND_SOME_Tiefe_IS_mäßig_tief a owl:Class ;
-    rdfs:subClassOf :Gewässer_Tiefe_mäßig_tief ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Tiefe_IS_mäßig_tief ) ] .
-
-:Gewässer_AND_SOME_Tiefe_IS_tief a owl:Class ;
-    rdfs:subClassOf :Gewässer_Tiefe_tief ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Tiefe_IS_tief ) ] .
-
-:Gewässer_AND_SOME_Trennung_vom_Meer_IS_Festland a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Festland ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Festland ) ] .
-
-:Gewässer_AND_SOME_Trennung_vom_Meer_IS_Inselkette a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Inselkette ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Inselkette ) ] .
-
-:Gewässer_AND_SOME_Trennung_vom_Meer_IS_Meerenge a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Meerenge ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Meerenge ) ] .
-
-:Gewässer_AND_SOME_Trennung_vom_Meer_IS_Meeresschwelle a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Meeresschwelle ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Meeresschwelle ) ] .
-
-:Gewässer_AND_SOME_Trophiestufe_IS_eutroph a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trophiestufe_eutroph ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_eutroph ) ] .
-
-:Gewässer_AND_SOME_Trophiestufe_IS_hypertroph a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trophiestufe_hypertroph ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_hypertroph ) ] .
-
-:Gewässer_AND_SOME_Trophiestufe_IS_mesotroph a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trophiestufe_mesotroph ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_mesotroph ) ] .
-
-:Gewässer_AND_SOME_Trophiestufe_IS_oligotroph a owl:Class ;
-    rdfs:subClassOf :Gewässer_Trophiestufe_oligotroph ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_oligotroph ) ] .
-
-:Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_gut a owl:Class ;
-    rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_gut ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_gut ) ] .
-
-:Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_mäßig a owl:Class ;
-    rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_mäßig ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_mäßig ) ] .
-
-:Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_schlecht a owl:Class ;
-    rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_schlecht ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_schlecht ) ] .
-
-:Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_sehr_gut a owl:Class ;
-    rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_sehr_gut ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_sehr_gut ) ] .
-
-:Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_unbefriedigend a owl:Class ;
-    rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_unbefriedigend ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_unbefriedigend ) ] .
-
-rdfs:comment a owl:AnnotationProperty .
 
 :Binnengewässer_Entstehungstyp_künstlich a owl:Class ;
     rdfs:subClassOf :Binnengewässer .
@@ -283,18 +30,6 @@ rdfs:comment a owl:AnnotationProperty .
 
 :Binnengewässer_Lage_des_Wasserkörpers_über_der_Erde_liegend a owl:Class ;
     rdfs:subClassOf :Binnengewässer .
-
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_amiktisch a owl:Class ;
-    rdfs:comment "AP rdfs:comment" ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend .
-
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_holomiktisch a owl:Class ;
-    rdfs:comment "AP rdfs:comment" ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend .
-
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_meromiktisch a owl:Class ;
-    rdfs:comment "AP rdfs:comment" ;
-    rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend .
 
 :Binnengewässer_Strömungsverhalten_strömungsfrei a owl:Class ;
     rdfs:subClassOf :Binnengewässer .
@@ -395,264 +130,28 @@ rdfs:comment a owl:AnnotationProperty .
 :Quelle a owl:Class ;
     rdfs:subClassOf :Binnengewässer .
 
-:SOME_Entstehungstyp_IS_künstlich a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entstehungstyp ;
-            owl:someValuesFrom :künstlich ] .
-
-:SOME_Entstehungstyp_IS_natürlich_entstanden a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entstehungstyp ;
-            owl:someValuesFrom :natürlich_entstanden ] .
-
-:SOME_Entwässerung_IS_endorheisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entwässerung ;
-            owl:someValuesFrom :endorheisch ] .
-
-:SOME_Entwässerung_IS_exorheisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entwässerung ;
-            owl:someValuesFrom :exorheisch ] .
-
-:SOME_Gewässerfarbe_IS_dunkeltrüb a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Gewässerfarbe ;
-            owl:someValuesFrom :dunkeltrüb ] .
-
-:SOME_Gewässerfarbe_IS_helltrüb a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Gewässerfarbe ;
-            owl:someValuesFrom :helltrüb ] .
-
-:SOME_Gewässerfarbe_IS_klar a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Gewässerfarbe ;
-            owl:someValuesFrom :klar ] .
-
-:SOME_Größe_IS_groß a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Größe ;
-            owl:someValuesFrom :groß ] .
-
-:SOME_Größe_IS_klein a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Größe ;
-            owl:someValuesFrom :klein ] .
-
-:SOME_Größe_IS_sehr_groß a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Größe ;
-            owl:someValuesFrom :sehr_groß ] .
-
-:SOME_Lage_des_Wasserkörpers_IS_quellen-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :quellen-artig ] .
-
-:SOME_Lage_des_Wasserkörpers_IS_schwinden-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :schwinden-artig ] .
-
-:SOME_Lage_des_Wasserkörpers_IS_unterirdisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :unterirdisch ] .
-
-:SOME_Lage_des_Wasserkörpers_IS_über_der_Erde_liegend a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :über_der_Erde_liegend ] .
-
-:SOME_Salzgehalt_IS_brackwasser-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Salzgehalt ;
-            owl:someValuesFrom :brackwasser-artig ] .
-
-:SOME_Salzgehalt_IS_salzwasser-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Salzgehalt ;
-            owl:someValuesFrom :salzwasser-artig ] .
-
-:SOME_Salzgehalt_IS_süßwasser-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Salzgehalt ;
-            owl:someValuesFrom :süßwasser-artig ] .
-
-:SOME_Stellung_im_Gewässersystem_IS_binnen-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Stellung_im_Gewässersystem ;
-            owl:someValuesFrom :binnen-artig ] .
-
-:SOME_Stellung_im_Gewässersystem_IS_festlandnah a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Stellung_im_Gewässersystem ;
-            owl:someValuesFrom :festlandnah ] .
-
-:SOME_Stellung_im_Gewässersystem_IS_meeres-artig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Stellung_im_Gewässersystem ;
-            owl:someValuesFrom :meeres-artig ] .
-
-:SOME_Strömungsverhalten_IS_stehend a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Strömungsverhalten ;
-            owl:someValuesFrom :stehend ] .
-
-:SOME_Strömungsverhalten_IS_strömend a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Strömungsverhalten ;
-            owl:someValuesFrom :strömend ] .
-
-:SOME_Strömungsverhalten_IS_strömungsfrei a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Strömungsverhalten ;
-            owl:someValuesFrom :strömungsfrei ] .
-
-:SOME_Sättigung_mit_Wasser_IS_phreatisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Sättigung_mit_Wasser ;
-            owl:someValuesFrom :phreatisch ] .
-
-:SOME_Tiefe_IS_flach a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Tiefe ;
-            owl:someValuesFrom :flach ] .
-
-:SOME_Tiefe_IS_mäßig_tief a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Tiefe ;
-            owl:someValuesFrom :mäßig_tief ] .
-
-:SOME_Tiefe_IS_tief a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Tiefe ;
-            owl:someValuesFrom :tief ] .
-
-:SOME_Trennung_vom_Meer_IS_Festland a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Festland ] .
-
-:SOME_Trennung_vom_Meer_IS_Inselkette a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Inselkette ] .
-
-:SOME_Trennung_vom_Meer_IS_Meerenge a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Meerenge ] .
-
-:SOME_Trennung_vom_Meer_IS_Meeresschwelle a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Meeresschwelle ] .
-
-:SOME_Trophiestufe_IS_eutroph a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :eutroph ] .
-
-:SOME_Trophiestufe_IS_hypertroph a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :hypertroph ] .
-
-:SOME_Trophiestufe_IS_mesotroph a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :mesotroph ] .
-
-:SOME_Trophiestufe_IS_oligotroph a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :oligotroph ] .
-
-:SOME_Wasserführung_im_Zeitverlauf_IS_ephemer a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :ephemer ] .
-
-:SOME_Wasserführung_im_Zeitverlauf_IS_episodisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :episodisch ] .
-
-:SOME_Wasserführung_im_Zeitverlauf_IS_intermittierend a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :intermittierend ] .
-
-:SOME_Wasserführung_im_Zeitverlauf_IS_perennierend a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :perennierend ] .
-
-:SOME_Wasserführung_im_Zeitverlauf_IS_periodisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :periodisch ] .
-
-:SOME_Zirkulationstyp_IS_amiktisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zirkulationstyp ;
-            owl:someValuesFrom :amiktisch ] .
-
-:SOME_Zirkulationstyp_IS_holomiktisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zirkulationstyp ;
-            owl:someValuesFrom :holomiktisch ] .
-
-:SOME_Zirkulationstyp_IS_meromiktisch a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zirkulationstyp ;
-            owl:someValuesFrom :meromiktisch ] .
-
-:SOME_Zugänglichkeit_IS_geschlossen a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zugänglichkeit ;
-            owl:someValuesFrom :geschlossen ] .
-
-:SOME_Zugänglichkeit_IS_offen a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zugänglichkeit ;
-            owl:someValuesFrom :offen ] .
-
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_gut a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_gut ] .
-
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_mäßig a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_mäßig ] .
-
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_schlecht a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_schlecht ] .
-
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_sehr_gut a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_sehr_gut ] .
-
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_unbefriedigend a owl:Class ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_unbefriedigend ] .
-
 :Salzwasser a owl:Class ;
     rdfs:subClassOf :Gewässer .
 
 :Schwinde a owl:Class ;
     rdfs:subClassOf :Binnengewässer .
 
+:Stillgewässer_Zirkulationstyp_amiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Stillgewässer .
+
+:Stillgewässer_Zirkulationstyp_holomiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Stillgewässer .
+
+:Stillgewässer_Zirkulationstyp_meromiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Stillgewässer .
+
 :Süßwasser a owl:Class ;
     rdfs:subClassOf :Gewässer .
+
+rdfs:comment a owl:AnnotationProperty .
 
 :Festland a :Festland,
         owl:Class,
@@ -920,14 +419,14 @@ rdfs:comment a owl:AnnotationProperty .
 
 :Stellung_im_Gewässersystem a owl:ObjectProperty .
 
+:Stillgewässer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
 :Strömungsverhalten a owl:ObjectProperty .
 
 :Tiefe a owl:ObjectProperty .
 
 :Zirkulationstyp a owl:ObjectProperty .
-
-:Binnengewässer_Strömungsverhalten_stehend a owl:Class ;
-    rdfs:subClassOf :Binnengewässer .
 
 :Lage_des_Wasserkörpers a owl:ObjectProperty .
 

@@ -22,1281 +22,781 @@
 
 :Salzgehalt a owl:ObjectProperty .
 
-# BY BY, object        ID_318603048 2021-01-14 17:18:15
+# BY, object        ID_318603048 2021-01-14 17:18:15
 
 :Salzwasser a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_881092601 2021-01-14 17:01:21
 
-:SOME_Salzgehalt_IS_salzwasser-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Salzgehalt ;
-            owl:someValuesFrom :salzwasser-artig ] .
-
-    :Gewässer_AND_SOME_Salzgehalt_IS_salzwasser-artig a owl:Class ;
-        rdfs:subClassOf :Salzwasser ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Salzgehalt_IS_salzwasser-artig ) ] .
-
-    # owl 2 punning
-    :salzwasser-artig a owl:Class ;
-        rdfs:subClassOf :Salzgehalt .
+# owl 2 punning
+        :salzwasser-artig a owl:Class ;
+            rdfs:subClassOf :Salzgehalt .
         
-    :salzwasser-artig rdf:type owl:NamedIndividual ;
-        a :salzwasser-artig .
+        :salzwasser-artig rdf:type owl:NamedIndividual ;
+            a :salzwasser-artig .
 
-# BY BY, object        ID_442317624 2021-01-14 20:31:25
+# BY, object        ID_442317624 2021-01-14 20:31:25
 
 :Süßwasser a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1493417393 2021-01-14 17:01:21
 
-:SOME_Salzgehalt_IS_süßwasser-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Salzgehalt ;
-            owl:someValuesFrom :süßwasser-artig ] .
-
-    :Gewässer_AND_SOME_Salzgehalt_IS_süßwasser-artig a owl:Class ;
-        rdfs:subClassOf :Süßwasser ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Salzgehalt_IS_süßwasser-artig ) ] .
-
-    # owl 2 punning
-    :süßwasser-artig a owl:Class ;
-        rdfs:subClassOf :Salzgehalt .
+# owl 2 punning
+        :süßwasser-artig a owl:Class ;
+            rdfs:subClassOf :Salzgehalt .
         
-    :süßwasser-artig rdf:type owl:NamedIndividual ;
-        a :süßwasser-artig .
+        :süßwasser-artig rdf:type owl:NamedIndividual ;
+            a :süßwasser-artig .
 
-# BY BY, object        ID_1259118166 2021-01-14 17:18:24
+# BY, object        ID_1259118166 2021-01-14 17:18:24
 
 :Brackwasser a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1300425357 2021-01-14 17:01:21
 
-:SOME_Salzgehalt_IS_brackwasser-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Salzgehalt ;
-            owl:someValuesFrom :brackwasser-artig ] .
-
-    :Gewässer_AND_SOME_Salzgehalt_IS_brackwasser-artig a owl:Class ;
-        rdfs:subClassOf :Brackwasser ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Salzgehalt_IS_brackwasser-artig ) ] .
-
-    # owl 2 punning
-    :brackwasser-artig a owl:Class ;
-        rdfs:subClassOf :Salzgehalt .
+# owl 2 punning
+        :brackwasser-artig a owl:Class ;
+            rdfs:subClassOf :Salzgehalt .
         
-    :brackwasser-artig rdf:type owl:NamedIndividual ;
-        a :brackwasser-artig .
+        :brackwasser-artig rdf:type owl:NamedIndividual ;
+            a :brackwasser-artig .
 
 # BY, predicate        ID_442938628 2021-01-14 17:01:21
 
 :Stellung_im_Gewässersystem a owl:ObjectProperty .
 
-# BY BY, object        ID_965849686 2021-01-15 11:09:06
+# BY, object        ID_965849686 2021-01-15 11:09:06
 
 :Meer a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_410943511 2021-01-19 13:50:04
 
-:SOME_Stellung_im_Gewässersystem_IS_meeres-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Stellung_im_Gewässersystem ;
-            owl:someValuesFrom :meeres-artig ] .
-
-    :Gewässer_AND_SOME_Stellung_im_Gewässersystem_IS_meeres-artig a owl:Class ;
-        rdfs:subClassOf :Meer ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Stellung_im_Gewässersystem_IS_meeres-artig ) ] .
-
-    # owl 2 punning
-    :meeres-artig a owl:Class ;
-        rdfs:subClassOf :Stellung_im_Gewässersystem .
+# owl 2 punning
+        :meeres-artig a owl:Class ;
+            rdfs:subClassOf :Stellung_im_Gewässersystem .
         
-    :meeres-artig rdf:type owl:NamedIndividual ;
-        a :meeres-artig .
+        :meeres-artig rdf:type owl:NamedIndividual ;
+            a :meeres-artig .
 
-# BY BY, object        ID_671484745 2021-01-15 12:45:53
+# BY, object        ID_671484745 2021-01-15 12:45:53
 
 :Gewässer_Stellung_im_Gewässersystem_festlandnah a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_552209344 2021-01-14 17:01:21
 
-:SOME_Stellung_im_Gewässersystem_IS_festlandnah a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Stellung_im_Gewässersystem ;
-            owl:someValuesFrom :festlandnah ] .
-
-    :Gewässer_AND_SOME_Stellung_im_Gewässersystem_IS_festlandnah a owl:Class ;
-        rdfs:subClassOf :Gewässer_Stellung_im_Gewässersystem_festlandnah ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Stellung_im_Gewässersystem_IS_festlandnah ) ] .
-
-    # owl 2 punning
-    :festlandnah a owl:Class ;
-        rdfs:subClassOf :Stellung_im_Gewässersystem .
+# owl 2 punning
+        :festlandnah a owl:Class ;
+            rdfs:subClassOf :Stellung_im_Gewässersystem .
         
-    :festlandnah rdf:type owl:NamedIndividual ;
-        a :festlandnah .
+        :festlandnah rdf:type owl:NamedIndividual ;
+            a :festlandnah .
 
-# BY BY, object        ID_1142058703 2021-01-15 11:09:08
+# BY, object        ID_1142058703 2021-01-15 11:09:08
 
 :Binnengewässer a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1804868277 2021-01-14 17:01:21
 
-:SOME_Stellung_im_Gewässersystem_IS_binnen-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Stellung_im_Gewässersystem ;
-            owl:someValuesFrom :binnen-artig ] .
-
-    :Gewässer_AND_SOME_Stellung_im_Gewässersystem_IS_binnen-artig a owl:Class ;
-        rdfs:subClassOf :Binnengewässer ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Stellung_im_Gewässersystem_IS_binnen-artig ) ] .
-
-    # owl 2 punning
-    :binnen-artig a owl:Class ;
-        rdfs:subClassOf :Stellung_im_Gewässersystem .
+# owl 2 punning
+        :binnen-artig a owl:Class ;
+            rdfs:subClassOf :Stellung_im_Gewässersystem .
         
-    :binnen-artig rdf:type owl:NamedIndividual ;
-        a :binnen-artig .
+        :binnen-artig rdf:type owl:NamedIndividual ;
+            a :binnen-artig .
 
 # BY, predicate        ID_1308991092 2021-01-15 11:09:10
 
 :Lage_des_Wasserkörpers a owl:ObjectProperty .
 
-# BY BY, object        ID_669827480 2021-01-15 12:45:53
+# BY, object        ID_669827480 2021-01-15 12:45:53
 
 :Binnengewässer_Lage_des_Wasserkörpers_über_der_Erde_liegend a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_713188373 2021-01-14 17:01:21
 
-:SOME_Lage_des_Wasserkörpers_IS_über_der_Erde_liegend a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :über_der_Erde_liegend ] .
-
-    :Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_über_der_Erde_liegend a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Lage_des_Wasserkörpers_über_der_Erde_liegend ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_über_der_Erde_liegend ) ] .
-
-    # owl 2 punning
-    :über_der_Erde_liegend a owl:Class ;
-        rdfs:subClassOf :Lage_des_Wasserkörpers .
+# owl 2 punning
+        :über_der_Erde_liegend a owl:Class ;
+            rdfs:subClassOf :Lage_des_Wasserkörpers .
         
-    :über_der_Erde_liegend rdf:type owl:NamedIndividual ;
-        a :über_der_Erde_liegend .
+        :über_der_Erde_liegend rdf:type owl:NamedIndividual ;
+            a :über_der_Erde_liegend .
 
-# BY BY, object        ID_1551467368 2021-01-15 12:45:53
+# BY, object        ID_1551467368 2021-01-15 12:45:53
 
 :Binnengewässer_Lage_des_Wasserkörpers_unterirdisch a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1653727242 2021-01-14 17:01:21
 
-:SOME_Lage_des_Wasserkörpers_IS_unterirdisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :unterirdisch ] .
-
-    :Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_unterirdisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Lage_des_Wasserkörpers_unterirdisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_unterirdisch ) ] .
-
-    # owl 2 punning
-    :unterirdisch a owl:Class ;
-        rdfs:subClassOf :Lage_des_Wasserkörpers .
+# owl 2 punning
+        :unterirdisch a owl:Class ;
+            rdfs:subClassOf :Lage_des_Wasserkörpers .
         
-    :unterirdisch rdf:type owl:NamedIndividual ;
-        a :unterirdisch .
+        :unterirdisch rdf:type owl:NamedIndividual ;
+            a :unterirdisch .
 
-# BY BY, object        ID_54597809 2021-01-15 12:00:25
+# BY, object        ID_54597809 2021-01-15 12:00:25
 
 :Quelle a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1217098574 2021-01-14 17:01:21
 
-:SOME_Lage_des_Wasserkörpers_IS_quellen-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :quellen-artig ] .
-
-    :Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_quellen-artig a owl:Class ;
-        rdfs:subClassOf :Quelle ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_quellen-artig ) ] .
-
-    # owl 2 punning
-    :quellen-artig a owl:Class ;
-        rdfs:subClassOf :Lage_des_Wasserkörpers .
+# owl 2 punning
+        :quellen-artig a owl:Class ;
+            rdfs:subClassOf :Lage_des_Wasserkörpers .
         
-    :quellen-artig rdf:type owl:NamedIndividual ;
-        a :quellen-artig .
+        :quellen-artig rdf:type owl:NamedIndividual ;
+            a :quellen-artig .
 
-# BY BY, object        ID_1368914530 2021-01-15 12:00:29
+# BY, object        ID_1368914530 2021-01-15 12:00:29
 
 :Schwinde a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1061565200 2021-01-14 17:01:21
 
-:SOME_Lage_des_Wasserkörpers_IS_schwinden-artig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Lage_des_Wasserkörpers ;
-            owl:someValuesFrom :schwinden-artig ] .
-
-    :Binnengewässer_AND_SOME_Lage_des_Wasserkörpers_IS_schwinden-artig a owl:Class ;
-        rdfs:subClassOf :Schwinde ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Lage_des_Wasserkörpers_IS_schwinden-artig ) ] .
-
-    # owl 2 punning
-    :schwinden-artig a owl:Class ;
-        rdfs:subClassOf :Lage_des_Wasserkörpers .
+# owl 2 punning
+        :schwinden-artig a owl:Class ;
+            rdfs:subClassOf :Lage_des_Wasserkörpers .
         
-    :schwinden-artig rdf:type owl:NamedIndividual ;
-        a :schwinden-artig .
+        :schwinden-artig rdf:type owl:NamedIndividual ;
+            a :schwinden-artig .
 
 # BY, predicate        ID_1496671923 2021-01-15 11:09:17
 
 :Strömungsverhalten a owl:ObjectProperty .
 
-# BY BY, object        ID_1261609446 2021-01-15 12:07:19
+# BY, object        ID_1261609446 2021-01-15 12:07:19
 
 :Fließgewässer a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_580045709 2021-01-14 17:01:21
 
-:SOME_Strömungsverhalten_IS_strömend a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Strömungsverhalten ;
-            owl:someValuesFrom :strömend ] .
-
-    :Binnengewässer_AND_SOME_Strömungsverhalten_IS_strömend a owl:Class ;
-        rdfs:subClassOf :Fließgewässer ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Strömungsverhalten_IS_strömend ) ] .
-
-    # owl 2 punning
-    :strömend a owl:Class ;
-        rdfs:subClassOf :Strömungsverhalten .
+# owl 2 punning
+        :strömend a owl:Class ;
+            rdfs:subClassOf :Strömungsverhalten .
         
-    :strömend rdf:type owl:NamedIndividual ;
-        a :strömend .
+        :strömend rdf:type owl:NamedIndividual ;
+            a :strömend .
 
-# BY BY, object        ID_14307755 2021-01-19 14:46:47
+# BY, object        ID_14307755 2021-01-19 14:48:59
 
-:Binnengewässer_Strömungsverhalten_stehend a owl:Class ;
+:Stillgewässer a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_751149537 2021-01-14 17:01:21
 
-:SOME_Strömungsverhalten_IS_stehend a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Strömungsverhalten ;
-            owl:someValuesFrom :stehend ] .
-
-    :Binnengewässer_AND_SOME_Strömungsverhalten_IS_stehend a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Strömungsverhalten_IS_stehend ) ] .
-
-    # owl 2 punning
-    :stehend a owl:Class ;
-        rdfs:subClassOf :Strömungsverhalten .
+# owl 2 punning
+        :stehend a owl:Class ;
+            rdfs:subClassOf :Strömungsverhalten .
         
-    :stehend rdf:type owl:NamedIndividual ;
-        a :stehend .
+        :stehend rdf:type owl:NamedIndividual ;
+            a :stehend .
 
 # BY, predicate        ID_49860073 2021-01-15 11:09:26
 
 :Zirkulationstyp a owl:ObjectProperty .
 
-# BY BY, object        ID_861922265 2021-01-15 12:45:53
+# BY, object        ID_861922265 2021-01-15 12:45:53
 
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_amiktisch a owl:Class ;
-            rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend .
+:Stillgewässer_Zirkulationstyp_amiktisch a owl:Class ;
+            rdfs:subClassOf :Stillgewässer .
 
 # SOME, predicate        ID_1136539048 2021-01-14 17:01:21
 
-:SOME_Zirkulationstyp_IS_amiktisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zirkulationstyp ;
-            owl:someValuesFrom :amiktisch ] .
-
-    :Binnengewässer_Strömungsverhalten_stehend_AND_SOME_Zirkulationstyp_IS_amiktisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_amiktisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer_Strömungsverhalten_stehend :SOME_Zirkulationstyp_IS_amiktisch ) ] .
-
-    # owl 2 punning
-    :amiktisch a owl:Class ;
-        rdfs:subClassOf :Zirkulationstyp .
+# owl 2 punning
+        :amiktisch a owl:Class ;
+            rdfs:subClassOf :Zirkulationstyp .
         
-    :amiktisch rdf:type owl:NamedIndividual ;
-        a :amiktisch .
+        :amiktisch rdf:type owl:NamedIndividual ;
+            a :amiktisch .
 
 # AP, predicate        ID_1314493317 2021-01-19 13:54:41
 
 rdfs:comment a owl:AnnotationProperty .
 
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_amiktisch rdfs:comment "AP rdfs:comment" .
+:Stillgewässer_Zirkulationstyp_amiktisch rdfs:comment "AP rdfs:comment" .
 
-# BY BY, object        ID_1656869749 2021-01-15 12:45:53
+# BY, object        ID_1656869749 2021-01-15 12:45:53
 
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_meromiktisch a owl:Class ;
-            rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend .
+:Stillgewässer_Zirkulationstyp_meromiktisch a owl:Class ;
+            rdfs:subClassOf :Stillgewässer .
 
 # SOME, predicate        ID_387485580 2021-01-14 17:01:21
 
-:SOME_Zirkulationstyp_IS_meromiktisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zirkulationstyp ;
-            owl:someValuesFrom :meromiktisch ] .
-
-    :Binnengewässer_Strömungsverhalten_stehend_AND_SOME_Zirkulationstyp_IS_meromiktisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_meromiktisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer_Strömungsverhalten_stehend :SOME_Zirkulationstyp_IS_meromiktisch ) ] .
-
-    # owl 2 punning
-    :meromiktisch a owl:Class ;
-        rdfs:subClassOf :Zirkulationstyp .
+# owl 2 punning
+        :meromiktisch a owl:Class ;
+            rdfs:subClassOf :Zirkulationstyp .
         
-    :meromiktisch rdf:type owl:NamedIndividual ;
-        a :meromiktisch .
+        :meromiktisch rdf:type owl:NamedIndividual ;
+            a :meromiktisch .
 
 # AP, predicate        ID_624649777 2021-01-19 13:54:41
 
 rdfs:comment a owl:AnnotationProperty .
 
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_meromiktisch rdfs:comment "AP rdfs:comment" .
+:Stillgewässer_Zirkulationstyp_meromiktisch rdfs:comment "AP rdfs:comment" .
 
-# BY BY, object        ID_1918708915 2021-01-15 12:45:53
+# BY, object        ID_1918708915 2021-01-15 12:45:53
 
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_holomiktisch a owl:Class ;
-            rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend .
+:Stillgewässer_Zirkulationstyp_holomiktisch a owl:Class ;
+            rdfs:subClassOf :Stillgewässer .
 
 # SOME, predicate        ID_232527543 2021-01-14 17:01:21
 
-:SOME_Zirkulationstyp_IS_holomiktisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zirkulationstyp ;
-            owl:someValuesFrom :holomiktisch ] .
-
-    :Binnengewässer_Strömungsverhalten_stehend_AND_SOME_Zirkulationstyp_IS_holomiktisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_holomiktisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer_Strömungsverhalten_stehend :SOME_Zirkulationstyp_IS_holomiktisch ) ] .
-
-    # owl 2 punning
-    :holomiktisch a owl:Class ;
-        rdfs:subClassOf :Zirkulationstyp .
+# owl 2 punning
+        :holomiktisch a owl:Class ;
+            rdfs:subClassOf :Zirkulationstyp .
         
-    :holomiktisch rdf:type owl:NamedIndividual ;
-        a :holomiktisch .
+        :holomiktisch rdf:type owl:NamedIndividual ;
+            a :holomiktisch .
 
 # AP, predicate        ID_843628553 2021-01-19 13:54:41
 
 rdfs:comment a owl:AnnotationProperty .
 
-:Binnengewässer_Strömungsverhalten_stehend_Zirkulationstyp_holomiktisch rdfs:comment "AP rdfs:comment" .
+:Stillgewässer_Zirkulationstyp_holomiktisch rdfs:comment "AP rdfs:comment" .
 
-# BY BY, object        ID_1060383414 2021-01-15 12:45:53
+# BY, object        ID_1060383414 2021-01-15 12:45:53
 
 :Binnengewässer_Strömungsverhalten_strömungsfrei a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1190941229 2021-01-14 17:01:21
 
-:SOME_Strömungsverhalten_IS_strömungsfrei a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Strömungsverhalten ;
-            owl:someValuesFrom :strömungsfrei ] .
-
-    :Binnengewässer_AND_SOME_Strömungsverhalten_IS_strömungsfrei a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Strömungsverhalten_strömungsfrei ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Strömungsverhalten_IS_strömungsfrei ) ] .
-
-    # owl 2 punning
-    :strömungsfrei a owl:Class ;
-        rdfs:subClassOf :Strömungsverhalten .
+# owl 2 punning
+        :strömungsfrei a owl:Class ;
+            rdfs:subClassOf :Strömungsverhalten .
         
-    :strömungsfrei rdf:type owl:NamedIndividual ;
-        a :strömungsfrei .
+        :strömungsfrei rdf:type owl:NamedIndividual ;
+            a :strömungsfrei .
 
 # BY, predicate        ID_73690593 2021-01-15 11:09:17
 
 :Entstehungstyp a owl:ObjectProperty .
 
-# BY BY, object        ID_973479619 2021-01-15 12:45:53
+# BY, object        ID_973479619 2021-01-15 12:45:53
 
 :Binnengewässer_Entstehungstyp_natürlich_entstanden a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1200096263 2021-01-14 17:01:21
 
-:SOME_Entstehungstyp_IS_natürlich_entstanden a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entstehungstyp ;
-            owl:someValuesFrom :natürlich_entstanden ] .
-
-    :Binnengewässer_AND_SOME_Entstehungstyp_IS_natürlich_entstanden a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Entstehungstyp_natürlich_entstanden ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entstehungstyp_IS_natürlich_entstanden ) ] .
-
-    # owl 2 punning
-    :natürlich_entstanden a owl:Class ;
-        rdfs:subClassOf :Entstehungstyp .
+# owl 2 punning
+        :natürlich_entstanden a owl:Class ;
+            rdfs:subClassOf :Entstehungstyp .
         
-    :natürlich_entstanden rdf:type owl:NamedIndividual ;
-        a :natürlich_entstanden .
+        :natürlich_entstanden rdf:type owl:NamedIndividual ;
+            a :natürlich_entstanden .
 
-# BY BY, object        ID_485165036 2021-01-15 12:45:53
+# BY, object        ID_485165036 2021-01-15 12:45:53
 
 :Binnengewässer_Entstehungstyp_künstlich a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1115876563 2021-01-14 17:01:21
 
-:SOME_Entstehungstyp_IS_künstlich a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entstehungstyp ;
-            owl:someValuesFrom :künstlich ] .
-
-    :Binnengewässer_AND_SOME_Entstehungstyp_IS_künstlich a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Entstehungstyp_künstlich ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entstehungstyp_IS_künstlich ) ] .
-
-    # owl 2 punning
-    :künstlich a owl:Class ;
-        rdfs:subClassOf :Entstehungstyp .
+# owl 2 punning
+        :künstlich a owl:Class ;
+            rdfs:subClassOf :Entstehungstyp .
         
-    :künstlich rdf:type owl:NamedIndividual ;
-        a :künstlich .
+        :künstlich rdf:type owl:NamedIndividual ;
+            a :künstlich .
 
 # BY, predicate        ID_1099319032 2021-01-15 11:09:17
 
 :Zugänglichkeit a owl:ObjectProperty .
 
-# BY BY, object        ID_211063235 2021-01-15 12:45:53
+# BY, object        ID_211063235 2021-01-15 12:45:53
 
 :Binnengewässer_Zugänglichkeit_offen a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_713371512 2021-01-14 17:01:21
 
-:SOME_Zugänglichkeit_IS_offen a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zugänglichkeit ;
-            owl:someValuesFrom :offen ] .
-
-    :Binnengewässer_AND_SOME_Zugänglichkeit_IS_offen a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Zugänglichkeit_offen ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Zugänglichkeit_IS_offen ) ] .
-
-    # owl 2 punning
-    :offen a owl:Class ;
-        rdfs:subClassOf :Zugänglichkeit .
+# owl 2 punning
+        :offen a owl:Class ;
+            rdfs:subClassOf :Zugänglichkeit .
         
-    :offen rdf:type owl:NamedIndividual ;
-        a :offen .
+        :offen rdf:type owl:NamedIndividual ;
+            a :offen .
 
-# BY BY, object        ID_406809138 2021-01-15 12:45:53
+# BY, object        ID_406809138 2021-01-15 12:45:53
 
 :Binnengewässer_Zugänglichkeit_geschlossen a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1981409047 2021-01-14 17:01:21
 
-:SOME_Zugänglichkeit_IS_geschlossen a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Zugänglichkeit ;
-            owl:someValuesFrom :geschlossen ] .
-
-    :Binnengewässer_AND_SOME_Zugänglichkeit_IS_geschlossen a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Zugänglichkeit_geschlossen ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Zugänglichkeit_IS_geschlossen ) ] .
-
-    # owl 2 punning
-    :geschlossen a owl:Class ;
-        rdfs:subClassOf :Zugänglichkeit .
+# owl 2 punning
+        :geschlossen a owl:Class ;
+            rdfs:subClassOf :Zugänglichkeit .
         
-    :geschlossen rdf:type owl:NamedIndividual ;
-        a :geschlossen .
+        :geschlossen rdf:type owl:NamedIndividual ;
+            a :geschlossen .
 
 # BY, predicate        ID_920935240 2021-01-15 11:09:26
 
 :Entwässerung a owl:ObjectProperty .
 
-# BY BY, object        ID_1063366294 2021-01-15 12:45:53
+# BY, object        ID_1063366294 2021-01-15 12:45:53
 
 :Binnengewässer_Entwässerung_exorheisch a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_794463359 2021-01-14 17:01:21
 
-:SOME_Entwässerung_IS_exorheisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entwässerung ;
-            owl:someValuesFrom :exorheisch ] .
-
-    :Binnengewässer_AND_SOME_Entwässerung_IS_exorheisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Entwässerung_exorheisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entwässerung_IS_exorheisch ) ] .
-
-    # owl 2 punning
-    :exorheisch a owl:Class ;
-        rdfs:subClassOf :Entwässerung .
+# owl 2 punning
+        :exorheisch a owl:Class ;
+            rdfs:subClassOf :Entwässerung .
         
-    :exorheisch rdf:type owl:NamedIndividual ;
-        a :exorheisch .
+        :exorheisch rdf:type owl:NamedIndividual ;
+            a :exorheisch .
 
-# BY BY, object        ID_753060196 2021-01-15 12:45:53
+# BY, object        ID_753060196 2021-01-15 12:45:53
 
 :Binnengewässer_Entwässerung_endorheisch a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_58409747 2021-01-14 17:01:21
 
-:SOME_Entwässerung_IS_endorheisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Entwässerung ;
-            owl:someValuesFrom :endorheisch ] .
-
-    :Binnengewässer_AND_SOME_Entwässerung_IS_endorheisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Entwässerung_endorheisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Entwässerung_IS_endorheisch ) ] .
-
-    # owl 2 punning
-    :endorheisch a owl:Class ;
-        rdfs:subClassOf :Entwässerung .
+# owl 2 punning
+        :endorheisch a owl:Class ;
+            rdfs:subClassOf :Entwässerung .
         
-    :endorheisch rdf:type owl:NamedIndividual ;
-        a :endorheisch .
+        :endorheisch rdf:type owl:NamedIndividual ;
+            a :endorheisch .
 
 # BY, predicate        ID_894905855 2021-01-15 11:09:31
 
 :Wasserführung_im_Zeitverlauf a owl:ObjectProperty .
 
-# BY BY, object        ID_160014632 2021-01-15 12:45:53
+# BY, object        ID_160014632 2021-01-15 12:45:53
 
 :Binnengewässer_Wasserführung_im_Zeitverlauf_perennierend a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_831441045 2021-01-14 17:01:21
 
-:SOME_Wasserführung_im_Zeitverlauf_IS_perennierend a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :perennierend ] .
-
-    :Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_perennierend a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_perennierend ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_perennierend ) ] .
-
-    # owl 2 punning
-    :perennierend a owl:Class ;
-        rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
+# owl 2 punning
+        :perennierend a owl:Class ;
+            rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
         
-    :perennierend rdf:type owl:NamedIndividual ;
-        a :perennierend .
+        :perennierend rdf:type owl:NamedIndividual ;
+            a :perennierend .
 
-# BY BY, object        ID_675547391 2021-01-15 12:45:53
+# BY, object        ID_675547391 2021-01-15 12:45:53
 
 :Binnengewässer_Wasserführung_im_Zeitverlauf_intermittierend a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_194233139 2021-01-14 17:01:21
 
-:SOME_Wasserführung_im_Zeitverlauf_IS_intermittierend a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :intermittierend ] .
-
-    :Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_intermittierend a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_intermittierend ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_intermittierend ) ] .
-
-    # owl 2 punning
-    :intermittierend a owl:Class ;
-        rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
+# owl 2 punning
+        :intermittierend a owl:Class ;
+            rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
         
-    :intermittierend rdf:type owl:NamedIndividual ;
-        a :intermittierend .
+        :intermittierend rdf:type owl:NamedIndividual ;
+            a :intermittierend .
 
-# BY BY, object        ID_1189579234 2021-01-15 12:45:53
+# BY, object        ID_1189579234 2021-01-15 12:45:53
 
 :Binnengewässer_Wasserführung_im_Zeitverlauf_periodisch a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1118786963 2021-01-14 17:01:21
 
-:SOME_Wasserführung_im_Zeitverlauf_IS_periodisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :periodisch ] .
-
-    :Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_periodisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_periodisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_periodisch ) ] .
-
-    # owl 2 punning
-    :periodisch a owl:Class ;
-        rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
+# owl 2 punning
+        :periodisch a owl:Class ;
+            rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
         
-    :periodisch rdf:type owl:NamedIndividual ;
-        a :periodisch .
+        :periodisch rdf:type owl:NamedIndividual ;
+            a :periodisch .
 
-# BY BY, object        ID_1300386613 2021-01-15 12:45:53
+# BY, object        ID_1300386613 2021-01-15 12:45:53
 
 :Binnengewässer_Wasserführung_im_Zeitverlauf_episodisch a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1691170788 2021-01-14 17:01:21
 
-:SOME_Wasserführung_im_Zeitverlauf_IS_episodisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :episodisch ] .
-
-    :Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_episodisch a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_episodisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_episodisch ) ] .
-
-    # owl 2 punning
-    :episodisch a owl:Class ;
-        rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
+# owl 2 punning
+        :episodisch a owl:Class ;
+            rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
         
-    :episodisch rdf:type owl:NamedIndividual ;
-        a :episodisch .
+        :episodisch rdf:type owl:NamedIndividual ;
+            a :episodisch .
 
-# BY BY, object        ID_105758235 2021-01-15 12:45:53
+# BY, object        ID_105758235 2021-01-15 12:45:53
 
 :Binnengewässer_Wasserführung_im_Zeitverlauf_ephemer a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_222571109 2021-01-14 17:01:21
 
-:SOME_Wasserführung_im_Zeitverlauf_IS_ephemer a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Wasserführung_im_Zeitverlauf ;
-            owl:someValuesFrom :ephemer ] .
-
-    :Binnengewässer_AND_SOME_Wasserführung_im_Zeitverlauf_IS_ephemer a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Wasserführung_im_Zeitverlauf_ephemer ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Wasserführung_im_Zeitverlauf_IS_ephemer ) ] .
-
-    # owl 2 punning
-    :ephemer a owl:Class ;
-        rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
+# owl 2 punning
+        :ephemer a owl:Class ;
+            rdfs:subClassOf :Wasserführung_im_Zeitverlauf .
         
-    :ephemer rdf:type owl:NamedIndividual ;
-        a :ephemer .
+        :ephemer rdf:type owl:NamedIndividual ;
+            a :ephemer .
 
 # BY, predicate        ID_1615616572 2021-01-15 11:09:42
 
 :Gewässerfarbe a owl:ObjectProperty .
 
-# BY BY, object        ID_1892135924 2021-01-15 12:45:53
+# BY, object        ID_1892135924 2021-01-15 12:45:53
 
 :Binnengewässer_Gewässerfarbe_dunkeltrüb a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1394896133 2021-01-14 17:01:21
 
-:SOME_Gewässerfarbe_IS_dunkeltrüb a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Gewässerfarbe ;
-            owl:someValuesFrom :dunkeltrüb ] .
-
-    :Binnengewässer_AND_SOME_Gewässerfarbe_IS_dunkeltrüb a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Gewässerfarbe_dunkeltrüb ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Gewässerfarbe_IS_dunkeltrüb ) ] .
-
-    # owl 2 punning
-    :dunkeltrüb a owl:Class ;
-        rdfs:subClassOf :Gewässerfarbe .
+# owl 2 punning
+        :dunkeltrüb a owl:Class ;
+            rdfs:subClassOf :Gewässerfarbe .
         
-    :dunkeltrüb rdf:type owl:NamedIndividual ;
-        a :dunkeltrüb .
+        :dunkeltrüb rdf:type owl:NamedIndividual ;
+            a :dunkeltrüb .
 
-# BY BY, object        ID_1505657181 2021-01-15 12:45:53
+# BY, object        ID_1505657181 2021-01-15 12:45:53
 
 :Binnengewässer_Gewässerfarbe_helltrüb a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1562230078 2021-01-14 17:01:21
 
-:SOME_Gewässerfarbe_IS_helltrüb a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Gewässerfarbe ;
-            owl:someValuesFrom :helltrüb ] .
-
-    :Binnengewässer_AND_SOME_Gewässerfarbe_IS_helltrüb a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Gewässerfarbe_helltrüb ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Gewässerfarbe_IS_helltrüb ) ] .
-
-    # owl 2 punning
-    :helltrüb a owl:Class ;
-        rdfs:subClassOf :Gewässerfarbe .
+# owl 2 punning
+        :helltrüb a owl:Class ;
+            rdfs:subClassOf :Gewässerfarbe .
         
-    :helltrüb rdf:type owl:NamedIndividual ;
-        a :helltrüb .
+        :helltrüb rdf:type owl:NamedIndividual ;
+            a :helltrüb .
 
-# BY BY, object        ID_1485251535 2021-01-15 12:45:53
+# BY, object        ID_1485251535 2021-01-15 12:45:53
 
 :Binnengewässer_Gewässerfarbe_klar a owl:Class ;
             rdfs:subClassOf :Binnengewässer .
 
 # SOME, predicate        ID_1465625780 2021-01-14 17:01:21
 
-:SOME_Gewässerfarbe_IS_klar a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Gewässerfarbe ;
-            owl:someValuesFrom :klar ] .
-
-    :Binnengewässer_AND_SOME_Gewässerfarbe_IS_klar a owl:Class ;
-        rdfs:subClassOf :Binnengewässer_Gewässerfarbe_klar ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Binnengewässer :SOME_Gewässerfarbe_IS_klar ) ] .
-
-    # owl 2 punning
-    :klar a owl:Class ;
-        rdfs:subClassOf :Gewässerfarbe .
+# owl 2 punning
+        :klar a owl:Class ;
+            rdfs:subClassOf :Gewässerfarbe .
         
-    :klar rdf:type owl:NamedIndividual ;
-        a :klar .
+        :klar rdf:type owl:NamedIndividual ;
+            a :klar .
 
 # BY, predicate        ID_1441797657 2021-01-15 11:09:53
 
 :Trennung_vom_Meer a owl:ObjectProperty .
 
-# BY BY, object        ID_519344887 2021-01-15 12:45:53
+# BY, object        ID_519344887 2021-01-15 12:45:53
 
 :Gewässer_Trennung_vom_Meer_Inselkette a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1032892243 2021-01-14 17:01:21
 
-:SOME_Trennung_vom_Meer_IS_Inselkette a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Inselkette ] .
-
-    :Gewässer_AND_SOME_Trennung_vom_Meer_IS_Inselkette a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Inselkette ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Inselkette ) ] .
-
-    # owl 2 punning
-    :Inselkette a owl:Class ;
-        rdfs:subClassOf :Trennung_vom_Meer .
+# owl 2 punning
+        :Inselkette a owl:Class ;
+            rdfs:subClassOf :Trennung_vom_Meer .
         
-    :Inselkette rdf:type owl:NamedIndividual ;
-        a :Inselkette .
+        :Inselkette rdf:type owl:NamedIndividual ;
+            a :Inselkette .
 
-# BY BY, object        ID_1551063691 2021-01-15 12:45:53
+# BY, object        ID_1551063691 2021-01-15 12:45:53
 
 :Gewässer_Trennung_vom_Meer_Festland a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_615412304 2021-01-14 17:01:21
 
-:SOME_Trennung_vom_Meer_IS_Festland a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Festland ] .
-
-    :Gewässer_AND_SOME_Trennung_vom_Meer_IS_Festland a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Festland ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Festland ) ] .
-
-    # owl 2 punning
-    :Festland a owl:Class ;
-        rdfs:subClassOf :Trennung_vom_Meer .
+# owl 2 punning
+        :Festland a owl:Class ;
+            rdfs:subClassOf :Trennung_vom_Meer .
         
-    :Festland rdf:type owl:NamedIndividual ;
-        a :Festland .
+        :Festland rdf:type owl:NamedIndividual ;
+            a :Festland .
 
-# BY BY, object        ID_1425072278 2021-01-15 12:45:53
+# BY, object        ID_1425072278 2021-01-15 12:45:53
 
 :Gewässer_Trennung_vom_Meer_Meeresschwelle a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1799155439 2021-01-14 17:01:21
 
-:SOME_Trennung_vom_Meer_IS_Meeresschwelle a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Meeresschwelle ] .
-
-    :Gewässer_AND_SOME_Trennung_vom_Meer_IS_Meeresschwelle a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Meeresschwelle ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Meeresschwelle ) ] .
-
-    # owl 2 punning
-    :Meeresschwelle a owl:Class ;
-        rdfs:subClassOf :Trennung_vom_Meer .
+# owl 2 punning
+        :Meeresschwelle a owl:Class ;
+            rdfs:subClassOf :Trennung_vom_Meer .
         
-    :Meeresschwelle rdf:type owl:NamedIndividual ;
-        a :Meeresschwelle .
+        :Meeresschwelle rdf:type owl:NamedIndividual ;
+            a :Meeresschwelle .
 
-# BY BY, object        ID_1217435053 2021-01-15 12:45:53
+# BY, object        ID_1217435053 2021-01-15 12:45:53
 
 :Gewässer_Trennung_vom_Meer_Meerenge a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_687836719 2021-01-14 17:01:21
 
-:SOME_Trennung_vom_Meer_IS_Meerenge a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trennung_vom_Meer ;
-            owl:someValuesFrom :Meerenge ] .
-
-    :Gewässer_AND_SOME_Trennung_vom_Meer_IS_Meerenge a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trennung_vom_Meer_Meerenge ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trennung_vom_Meer_IS_Meerenge ) ] .
-
-    # owl 2 punning
-    :Meerenge a owl:Class ;
-        rdfs:subClassOf :Trennung_vom_Meer .
+# owl 2 punning
+        :Meerenge a owl:Class ;
+            rdfs:subClassOf :Trennung_vom_Meer .
         
-    :Meerenge rdf:type owl:NamedIndividual ;
-        a :Meerenge .
+        :Meerenge rdf:type owl:NamedIndividual ;
+            a :Meerenge .
 
 # BY, predicate        ID_857781736 2021-01-14 17:01:21
 
 :Größe a owl:ObjectProperty .
 
-# BY BY, object        ID_140977439 2021-01-15 12:45:53
+# BY, object        ID_140977439 2021-01-15 12:45:53
 
 :Gewässer_Größe_sehr_groß a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1296867438 2021-01-14 17:01:21
 
-:SOME_Größe_IS_sehr_groß a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Größe ;
-            owl:someValuesFrom :sehr_groß ] .
-
-    :Gewässer_AND_SOME_Größe_IS_sehr_groß a owl:Class ;
-        rdfs:subClassOf :Gewässer_Größe_sehr_groß ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Größe_IS_sehr_groß ) ] .
-
-    # owl 2 punning
-    :sehr_groß a owl:Class ;
-        rdfs:subClassOf :Größe .
+# owl 2 punning
+        :sehr_groß a owl:Class ;
+            rdfs:subClassOf :Größe .
         
-    :sehr_groß rdf:type owl:NamedIndividual ;
-        a :sehr_groß .
+        :sehr_groß rdf:type owl:NamedIndividual ;
+            a :sehr_groß .
 
-# BY BY, object        ID_1005344841 2021-01-15 12:45:53
+# BY, object        ID_1005344841 2021-01-15 12:45:53
 
 :Gewässer_Größe_groß a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_590939326 2021-01-14 17:01:21
 
-:SOME_Größe_IS_groß a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Größe ;
-            owl:someValuesFrom :groß ] .
-
-    :Gewässer_AND_SOME_Größe_IS_groß a owl:Class ;
-        rdfs:subClassOf :Gewässer_Größe_groß ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Größe_IS_groß ) ] .
-
-    # owl 2 punning
-    :groß a owl:Class ;
-        rdfs:subClassOf :Größe .
+# owl 2 punning
+        :groß a owl:Class ;
+            rdfs:subClassOf :Größe .
         
-    :groß rdf:type owl:NamedIndividual ;
-        a :groß .
+        :groß rdf:type owl:NamedIndividual ;
+            a :groß .
 
-# BY BY, object        ID_238117282 2021-01-15 12:45:53
+# BY, object        ID_238117282 2021-01-15 12:45:53
 
 :Gewässer_Größe_klein a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1835414424 2021-01-14 17:01:21
 
-:SOME_Größe_IS_klein a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Größe ;
-            owl:someValuesFrom :klein ] .
-
-    :Gewässer_AND_SOME_Größe_IS_klein a owl:Class ;
-        rdfs:subClassOf :Gewässer_Größe_klein ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Größe_IS_klein ) ] .
-
-    # owl 2 punning
-    :klein a owl:Class ;
-        rdfs:subClassOf :Größe .
+# owl 2 punning
+        :klein a owl:Class ;
+            rdfs:subClassOf :Größe .
         
-    :klein rdf:type owl:NamedIndividual ;
-        a :klein .
+        :klein rdf:type owl:NamedIndividual ;
+            a :klein .
 
 # BY, predicate        ID_355458390 2021-01-14 17:01:21
 
 :Tiefe a owl:ObjectProperty .
 
-# BY BY, object        ID_1409184999 2021-01-15 12:45:53
+# BY, object        ID_1409184999 2021-01-15 12:45:53
 
 :Gewässer_Tiefe_tief a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1381472202 2021-01-14 17:01:21
 
-:SOME_Tiefe_IS_tief a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Tiefe ;
-            owl:someValuesFrom :tief ] .
-
-    :Gewässer_AND_SOME_Tiefe_IS_tief a owl:Class ;
-        rdfs:subClassOf :Gewässer_Tiefe_tief ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Tiefe_IS_tief ) ] .
-
-    # owl 2 punning
-    :tief a owl:Class ;
-        rdfs:subClassOf :Tiefe .
+# owl 2 punning
+        :tief a owl:Class ;
+            rdfs:subClassOf :Tiefe .
         
-    :tief rdf:type owl:NamedIndividual ;
-        a :tief .
+        :tief rdf:type owl:NamedIndividual ;
+            a :tief .
 
-# BY BY, object        ID_153167727 2021-01-15 12:45:53
+# BY, object        ID_153167727 2021-01-15 12:45:53
 
 :Gewässer_Tiefe_mäßig_tief a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1790682027 2021-01-14 17:01:21
 
-:SOME_Tiefe_IS_mäßig_tief a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Tiefe ;
-            owl:someValuesFrom :mäßig_tief ] .
-
-    :Gewässer_AND_SOME_Tiefe_IS_mäßig_tief a owl:Class ;
-        rdfs:subClassOf :Gewässer_Tiefe_mäßig_tief ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Tiefe_IS_mäßig_tief ) ] .
-
-    # owl 2 punning
-    :mäßig_tief a owl:Class ;
-        rdfs:subClassOf :Tiefe .
+# owl 2 punning
+        :mäßig_tief a owl:Class ;
+            rdfs:subClassOf :Tiefe .
         
-    :mäßig_tief rdf:type owl:NamedIndividual ;
-        a :mäßig_tief .
+        :mäßig_tief rdf:type owl:NamedIndividual ;
+            a :mäßig_tief .
 
-# BY BY, object        ID_194038908 2021-01-15 12:45:53
+# BY, object        ID_194038908 2021-01-15 12:45:53
 
 :Gewässer_Tiefe_flach a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_878180997 2021-01-14 17:01:21
 
-:SOME_Tiefe_IS_flach a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Tiefe ;
-            owl:someValuesFrom :flach ] .
-
-    :Gewässer_AND_SOME_Tiefe_IS_flach a owl:Class ;
-        rdfs:subClassOf :Gewässer_Tiefe_flach ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Tiefe_IS_flach ) ] .
-
-    # owl 2 punning
-    :flach a owl:Class ;
-        rdfs:subClassOf :Tiefe .
+# owl 2 punning
+        :flach a owl:Class ;
+            rdfs:subClassOf :Tiefe .
         
-    :flach rdf:type owl:NamedIndividual ;
-        a :flach .
+        :flach rdf:type owl:NamedIndividual ;
+            a :flach .
 
 # BY, predicate        ID_1449600205 2021-01-14 17:01:21
 
 :Trophiestufe a owl:ObjectProperty .
 
-# BY BY, object        ID_1260890827 2021-01-15 12:45:53
+# BY, object        ID_1260890827 2021-01-15 12:45:53
 
 :Gewässer_Trophiestufe_oligotroph a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1974595102 2021-01-14 17:01:21
 
-:SOME_Trophiestufe_IS_oligotroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :oligotroph ] .
-
-    :Gewässer_AND_SOME_Trophiestufe_IS_oligotroph a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trophiestufe_oligotroph ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_oligotroph ) ] .
-
-    # owl 2 punning
-    :oligotroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
+# owl 2 punning
+        :oligotroph a owl:Class ;
+            rdfs:subClassOf :Trophiestufe .
         
-    :oligotroph rdf:type owl:NamedIndividual ;
-        a :oligotroph .
+        :oligotroph rdf:type owl:NamedIndividual ;
+            a :oligotroph .
 
-# BY BY, object        ID_440590526 2021-01-15 12:45:53
+# BY, object        ID_440590526 2021-01-15 12:45:53
 
 :Gewässer_Trophiestufe_mesotroph a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_825688094 2021-01-14 17:01:21
 
-:SOME_Trophiestufe_IS_mesotroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :mesotroph ] .
-
-    :Gewässer_AND_SOME_Trophiestufe_IS_mesotroph a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trophiestufe_mesotroph ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_mesotroph ) ] .
-
-    # owl 2 punning
-    :mesotroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
+# owl 2 punning
+        :mesotroph a owl:Class ;
+            rdfs:subClassOf :Trophiestufe .
         
-    :mesotroph rdf:type owl:NamedIndividual ;
-        a :mesotroph .
+        :mesotroph rdf:type owl:NamedIndividual ;
+            a :mesotroph .
 
-# BY BY, object        ID_340097028 2021-01-15 12:45:53
+# BY, object        ID_340097028 2021-01-15 12:45:53
 
 :Gewässer_Trophiestufe_eutroph a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1417244006 2021-01-14 17:01:21
 
-:SOME_Trophiestufe_IS_eutroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :eutroph ] .
-
-    :Gewässer_AND_SOME_Trophiestufe_IS_eutroph a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trophiestufe_eutroph ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_eutroph ) ] .
-
-    # owl 2 punning
-    :eutroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
+# owl 2 punning
+        :eutroph a owl:Class ;
+            rdfs:subClassOf :Trophiestufe .
         
-    :eutroph rdf:type owl:NamedIndividual ;
-        a :eutroph .
+        :eutroph rdf:type owl:NamedIndividual ;
+            a :eutroph .
 
-# BY BY, object        ID_1784703466 2021-01-15 12:45:53
+# BY, object        ID_1784703466 2021-01-15 12:45:53
 
 :Gewässer_Trophiestufe_hypertroph a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_399418016 2021-01-14 17:01:21
 
-:SOME_Trophiestufe_IS_hypertroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :hypertroph ] .
-
-    :Gewässer_AND_SOME_Trophiestufe_IS_hypertroph a owl:Class ;
-        rdfs:subClassOf :Gewässer_Trophiestufe_hypertroph ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_hypertroph ) ] .
-
-    # owl 2 punning
-    :hypertroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
+# owl 2 punning
+        :hypertroph a owl:Class ;
+            rdfs:subClassOf :Trophiestufe .
         
-    :hypertroph rdf:type owl:NamedIndividual ;
-        a :hypertroph .
+        :hypertroph rdf:type owl:NamedIndividual ;
+            a :hypertroph .
 
 # BY, predicate        ID_1677746201 2021-01-14 17:01:21
 
 :ökologischer_Zustand a owl:ObjectProperty .
 
-# BY BY, object        ID_1235941310 2021-01-15 12:45:53
+# BY, object        ID_1235941310 2021-01-15 12:45:53
 
 :Gewässer_ökologischer_Zustand_ökologischer_Zustand_sehr_gut a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_394087743 2021-01-15 10:21:35
 
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_sehr_gut a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_sehr_gut ] .
-
-    :Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_sehr_gut a owl:Class ;
-        rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_sehr_gut ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_sehr_gut ) ] .
-
-    # owl 2 punning
-    :ökologischer_Zustand_sehr_gut a owl:Class ;
-        rdfs:subClassOf :ökologischer_Zustand .
+# owl 2 punning
+        :ökologischer_Zustand_sehr_gut a owl:Class ;
+            rdfs:subClassOf :ökologischer_Zustand .
         
-    :ökologischer_Zustand_sehr_gut rdf:type owl:NamedIndividual ;
-        a :ökologischer_Zustand_sehr_gut .
+        :ökologischer_Zustand_sehr_gut rdf:type owl:NamedIndividual ;
+            a :ökologischer_Zustand_sehr_gut .
 
-# BY BY, object        ID_660935940 2021-01-15 12:45:53
+# BY, object        ID_660935940 2021-01-15 12:45:53
 
 :Gewässer_ökologischer_Zustand_ökologischer_Zustand_gut a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1113083660 2021-01-15 10:21:38
 
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_gut a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_gut ] .
-
-    :Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_gut a owl:Class ;
-        rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_gut ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_gut ) ] .
-
-    # owl 2 punning
-    :ökologischer_Zustand_gut a owl:Class ;
-        rdfs:subClassOf :ökologischer_Zustand .
+# owl 2 punning
+        :ökologischer_Zustand_gut a owl:Class ;
+            rdfs:subClassOf :ökologischer_Zustand .
         
-    :ökologischer_Zustand_gut rdf:type owl:NamedIndividual ;
-        a :ökologischer_Zustand_gut .
+        :ökologischer_Zustand_gut rdf:type owl:NamedIndividual ;
+            a :ökologischer_Zustand_gut .
 
-# BY BY, object        ID_68653163 2021-01-15 12:45:53
+# BY, object        ID_68653163 2021-01-15 12:45:53
 
 :Gewässer_ökologischer_Zustand_ökologischer_Zustand_mäßig a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_857607730 2021-01-15 10:21:42
 
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_mäßig a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_mäßig ] .
-
-    :Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_mäßig a owl:Class ;
-        rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_mäßig ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_mäßig ) ] .
-
-    # owl 2 punning
-    :ökologischer_Zustand_mäßig a owl:Class ;
-        rdfs:subClassOf :ökologischer_Zustand .
+# owl 2 punning
+        :ökologischer_Zustand_mäßig a owl:Class ;
+            rdfs:subClassOf :ökologischer_Zustand .
         
-    :ökologischer_Zustand_mäßig rdf:type owl:NamedIndividual ;
-        a :ökologischer_Zustand_mäßig .
+        :ökologischer_Zustand_mäßig rdf:type owl:NamedIndividual ;
+            a :ökologischer_Zustand_mäßig .
 
-# BY BY, object        ID_1083485239 2021-01-15 12:45:53
+# BY, object        ID_1083485239 2021-01-15 12:45:53
 
 :Gewässer_ökologischer_Zustand_ökologischer_Zustand_unbefriedigend a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_1538188459 2021-01-15 10:21:46
 
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_unbefriedigend a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_unbefriedigend ] .
-
-    :Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_unbefriedigend a owl:Class ;
-        rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_unbefriedigend ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_unbefriedigend ) ] .
-
-    # owl 2 punning
-    :ökologischer_Zustand_unbefriedigend a owl:Class ;
-        rdfs:subClassOf :ökologischer_Zustand .
+# owl 2 punning
+        :ökologischer_Zustand_unbefriedigend a owl:Class ;
+            rdfs:subClassOf :ökologischer_Zustand .
         
-    :ökologischer_Zustand_unbefriedigend rdf:type owl:NamedIndividual ;
-        a :ökologischer_Zustand_unbefriedigend .
+        :ökologischer_Zustand_unbefriedigend rdf:type owl:NamedIndividual ;
+            a :ökologischer_Zustand_unbefriedigend .
 
-# BY BY, object        ID_911250002 2021-01-15 12:45:53
+# BY, object        ID_911250002 2021-01-15 12:45:53
 
 :Gewässer_ökologischer_Zustand_ökologischer_Zustand_schlecht a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_602464237 2021-01-15 10:21:50
 
-:SOME_ökologischer_Zustand_IS_ökologischer_Zustand_schlecht a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :ökologischer_Zustand ;
-            owl:someValuesFrom :ökologischer_Zustand_schlecht ] .
-
-    :Gewässer_AND_SOME_ökologischer_Zustand_IS_ökologischer_Zustand_schlecht a owl:Class ;
-        rdfs:subClassOf :Gewässer_ökologischer_Zustand_ökologischer_Zustand_schlecht ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_ökologischer_Zustand_IS_ökologischer_Zustand_schlecht ) ] .
-
-    # owl 2 punning
-    :ökologischer_Zustand_schlecht a owl:Class ;
-        rdfs:subClassOf :ökologischer_Zustand .
+# owl 2 punning
+        :ökologischer_Zustand_schlecht a owl:Class ;
+            rdfs:subClassOf :ökologischer_Zustand .
         
-    :ökologischer_Zustand_schlecht rdf:type owl:NamedIndividual ;
-        a :ökologischer_Zustand_schlecht .
+        :ökologischer_Zustand_schlecht rdf:type owl:NamedIndividual ;
+            a :ökologischer_Zustand_schlecht .
 
 # BY, predicate        ID_1604888519 2021-01-14 17:01:21
 
 :Sättigung_mit_Wasser a owl:ObjectProperty .
 
-# BY BY, object        ID_1388604032 2021-01-15 12:45:53
+# BY, object        ID_1388604032 2021-01-15 12:45:53
 
 :Gewässer_Sättigung_mit_Wasser_phreatisch a owl:Class ;
             rdfs:subClassOf :Gewässer .
 
 # SOME, predicate        ID_575931966 2021-01-14 17:01:21
 
-:SOME_Sättigung_mit_Wasser_IS_phreatisch a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Sättigung_mit_Wasser ;
-            owl:someValuesFrom :phreatisch ] .
-
-    :Gewässer_AND_SOME_Sättigung_mit_Wasser_IS_phreatisch a owl:Class ;
-        rdfs:subClassOf :Gewässer_Sättigung_mit_Wasser_phreatisch ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_Sättigung_mit_Wasser_IS_phreatisch ) ] .
-
-    # owl 2 punning
-    :phreatisch a owl:Class ;
-        rdfs:subClassOf :Sättigung_mit_Wasser .
+# owl 2 punning
+        :phreatisch a owl:Class ;
+            rdfs:subClassOf :Sättigung_mit_Wasser .
         
-    :phreatisch rdf:type owl:NamedIndividual ;
-        a :phreatisch .
+        :phreatisch rdf:type owl:NamedIndividual ;
+            a :phreatisch .
     
