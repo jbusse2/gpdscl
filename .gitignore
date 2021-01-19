@@ -1,3 +1,13 @@
+# jupytext builds
+_build
+
+# gpdscl backup directory
+backup
+
+# emacs backup files
+*~
+\#*\#
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
