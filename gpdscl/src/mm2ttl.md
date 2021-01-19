@@ -182,7 +182,7 @@ def ERROR(node, text):
 
 ## Depth first tree traversal
 
-Traverse the xml file of a freeplane mindmap in depth first order. If we find a node which stars with "ONTOLOGY " we start to interpret the subtree as a gpdscl annotated mindmap. 
+Traverse the xml file of a freeplane mindmap in depth first order. If we find a node which stars with "ONTOLOGY " we start to interpret the subtree as a gpdscl annotated mindmap.
 
 ```{code-cell} ipython3
 def searchForOntology(node):
@@ -200,7 +200,7 @@ def searchForOntology(node):
             searchForOntology(n)
 ```
 
-The current node is a rdf resource. Starting from here we expect the child nodes being rdf predicates.  
+The current node is a rdf resource. Starting from here we expect the child nodes being rdf predicates.
 
 ```{code-cell} ipython3
 def walkPredicates(node, *, gp, dsa, dt):
@@ -223,6 +223,16 @@ def walkPredicateInstances(node, *, s, p, o):
 ```
 
 ## T-Box templates
+
+function parameter:
+
+* node ... an ElemTree XML node with the XML name "node"
+* element type: one of {'predicate', 'object'}
+* gp  ... genus proximum
+* dsa ... differentia specifica attribute
+* dt  ... definition term
+* dsv ... differentia specifica value
+
 
 (ontology)=
 ### ONTOLOGY
@@ -252,8 +262,6 @@ def ONTOLOGY(node, elementType, *, gp, dsa, dt):
         walkPredicates(n, gp='OntologyTopConcept', dsa='OntologyTopProperty', dt=myIri)
 ```
 
-
-
 (by)=
 ### BY
 
@@ -273,7 +281,6 @@ Die SKOS-Semantik ist angelehnt an <https://www.w3.org/TR/skos-primer#seccollect
         goat milk (skos:Concept)
         buffalo milk (skos:Concept)
 
-
 ```{code-cell} ipython3
 def BY(node, elementType, *, gp, dsa, dt):
     """
@@ -292,9 +299,22 @@ def BY(node, elementType, *, gp, dsa, dt):
     owlCode += f"""\n{dsa} a owl:ObjectProperty ."""
     attachToNode(node, owlCode, 'predicate')
 
-    for n in listOfValidChildren(node):        
-        _, myIri = makeIriFromNode(n, 0)
-            
+    for n in listOfValidChildren(node):  
+        
+        if n.get('TEXT') != '_':
+            _, myIri = makeIriFromNode(n, 0)
+        else:
+            # generate a nice readable IRI
+            childIriSome = [ makeIriFromNode(child, 1)[1] \
+                            for child in listOfValidChildren(n)\
+                            if makeIriFromNode(child, 1)[0] == 'SOME']
+            print(childIriSome)
+            if len(childIriSome) > 0:
+                if childIriSome[0] != "":
+                    myIri = f"{dt}_{dsa[1:]}_{childIriSome[0][1:]}"
+                
+        
+        
         owlCode = verbose(n, "BY, object", 2)
         owlCode += f"""\n{myIri} a owl:Class ;
             rdfs:subClassOf {dt} ."""
@@ -312,7 +332,6 @@ def BY(node, elementType, *, gp, dsa, dt):
 
 Semantik:
 * Jedes Ding, das Element der Menge *Kuh* ist, ist auch Element der Menge *Tier*.
-
 
 ```{code-cell} ipython3
 def ISA(node, elementType, *, gp, dsa, dt):
@@ -474,28 +493,28 @@ Die Antwort auf diese Fragen hängt davon ab, welches Inferencing wir im Kopf ha
 
 In der hier vorgeschlagenen Semantik für einen Teilpfad der Form Pfad   `Milch, BY hat_Quelle, Kuhmilch, SOME Kuh` wird ein Inferncing ermöglicht, mit dem ein Ding anhand seiner charakteristischen Eigenschaften vom Allgemeinen immer spezieller zum Besonderen hin klassifiziert werden kann.
 
-
-
 ```{code-cell} ipython3
 def SOME(node, elementType, *, gp, dsa, dt):
 
     """
     SOME
-    #    liquid (object, gp)
+    #    milk (object, gp)
     #      BY has_Source (predicate, dsa)
-    #        cow milk (object, dt)
-    #          SOME cow  (predicate, dsv)  # we are called here
+    #        cow milk (object, dt)         # we are called here
+    #          SOME cow  (predicate, dsv)
     """
     myTag, myIri = makeIriFromNode(node, 1)
     dsv = myIri  # differentia specifica value
+
+    # be careful: construct IRI without leading ":", attach later
+    # eliminate ":" from dsa and dsv
+    someClass = f"SOME_{dsa[1:]}_IS_{dsv[1:]}"  
+    # alternative: someClass = 'SOME_' + node.get('ID')  
     
-    someClass = f":SOME_{dsa}_{dsv}"  
-    # someClass = ':SOME_' + node.get('ID')
-    
-    andClass  = f"{gp}_AND_{someClass}"
+    andClass  = f"{gp}_AND_{someClass}"  # IRI gets the leading ":" from gp
 
     owlCode = verbose(node, "SOME, predicate", 2)
-    owlCode += f"""\n{someClass} a owl:Class ;
+    owlCode += f"""\n:{someClass} a owl:Class ;
         owl:equivalentClass [ a owl:Restriction ;
             owl:onProperty {dsa} ;
             owl:someValuesFrom {dsv} ] .
@@ -503,7 +522,7 @@ def SOME(node, elementType, *, gp, dsa, dt):
     {andClass} a owl:Class ;
         rdfs:subClassOf {dt} ;
         owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( {gp} {someClass} ) ] .
+            owl:intersectionOf ( {gp} :{someClass} ) ] .
 
     # owl 2 punning
     {dsv} a owl:Class ;
@@ -560,7 +579,6 @@ WICHTIG:
 * Die Kombination von ISA und SUP stellt in GPDSCL ein wesentliches Sprachelement dar, das die zunehmend genauere Klassierung von Beispielen anhand mehrerer Oberklassen ermöglicht.
 *  In [F-Logic](https://en.wikipedia.org/wiki/F-logic) würde man schreiben: `Hengst(X) <- Tier(X) AND Maskulinum(X) AND Pferd(X)`: *SUP ist gleichbedeutend mit konjunktiven Regeln.*
 
-
 ```{code-cell} ipython3
 def SUP(node, elementType, *, gp, dsa, dt):
 
@@ -599,7 +617,6 @@ def SUP(node, elementType, *, gp, dsa, dt):
         walkPredicates(n, gp=':myTopObject', dsa=':myTopDataProperty', dt=myIri)  # parameter shift here
 ```
 
-
 (ex)=
 ### EX, Example
 
@@ -623,7 +640,6 @@ RDFS-Interpretation:
 
 In GPDSCL wollen wir keine Mengen von Mengen haben. Unklar, wie wir solche eine Modellierung übersetzen wollen.
 
-
 ```{code-cell} ipython3
 def EX(node, elementType, *, gp, dsa, dt):
 
@@ -645,7 +661,6 @@ def EX(node, elementType, *, gp, dsa, dt):
         attachToNode(n, owlCode, 'example')  
         walkPredicateInstances(n, s=None, p=None, o=myIri)
 ```
-
 
 (ap)=
 ### AP
@@ -768,7 +783,6 @@ def OP(node, elementType, *, s, p, o):
         walkPredicateInstances(n, s=0, p=op, o=childIri)
 ```
 
-
 (xe)=
 ### XE, elpmaxe
 
@@ -784,8 +798,6 @@ EX (example), in umgekehrter Leserichtung geschrieben: EX, elpmaxe. Anwendung do
 Semantik: 
 * *Elsa_12345* ist ein Element der Menge *Kuh* (aus EX)
 * *Elsa_12345* ist außerdem ein Element der Menge *Femininum* und der Menge *Fleckvieh* (aus XE)
-
-
 
 ```{code-cell} ipython3
 def XE(node, elementType, *, s, p, o):
@@ -864,4 +876,3 @@ def mm2turtle(node, baseUri, *, verbosity=0):
 #    hook = hookNode.find('hook')
 #    hookNode.remove(hook)
 ```
-

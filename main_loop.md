@@ -49,8 +49,11 @@ In this early version 0.2 we make use of ugly, but simple scriptig techniques, i
 
 
 ```python
-# project = 'milk' # do not add the file extension here
-project = 'sandbox'
+# do not add the file extension '.mm' to the project name
+
+# project = 'milk'
+# project = 'sandbox'
+project= 'Gewässer_Challenge_2021-01-19'
 ```
 
 Don't change these settings:
