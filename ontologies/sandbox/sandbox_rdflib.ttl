@@ -1,0 +1,100 @@
+@prefix : <http://jbusse.de/ontologies/sandbox#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+: a owl:Ontology .
+
+:A5 a :Autobahn ;
+    rdfs:comment "kann auch eine URL sein?" ;
+    skos:definition "Salzburg - München" .
+
+:Geschwindigkeit a owl:ObjectProperty .
+
+:Gewässer_AND_SOME_Trophiestufe_IS_eutroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_eutroph ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_eutroph ) ] .
+
+:Gewässer_AND_SOME_Trophiestufe_IS_hypertroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_hypertroph ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_hypertroph ) ] .
+
+:Gewässer_AND_SOME_Trophiestufe_IS_mesotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_mesotroph ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_mesotroph ) ] .
+
+:Gewässer_AND_SOME_Trophiestufe_IS_oligotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_oligotroph ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_oligotroph ) ] .
+
+rdfs:comment a owl:AnnotationProperty .
+
+skos:definition a owl:AnnotationProperty .
+
+:Autobahn a owl:Class ;
+    rdfs:subClassOf :Straßen ;
+    skos:definition "Teststrecke für Rennwagen" .
+
+:Gewässer_Trophiestufe_SOME_eutroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_hypertroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_mesotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_oligotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:SOME_Trophiestufe_IS_eutroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :Trophiestufe ;
+            owl:someValuesFrom :eutroph ] .
+
+:SOME_Trophiestufe_IS_hypertroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :Trophiestufe ;
+            owl:someValuesFrom :hypertroph ] .
+
+:SOME_Trophiestufe_IS_mesotroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :Trophiestufe ;
+            owl:someValuesFrom :mesotroph ] .
+
+:SOME_Trophiestufe_IS_oligotroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :Trophiestufe ;
+            owl:someValuesFrom :oligotroph ] .
+
+:Straßen a owl:Class .
+
+:eutroph a :eutroph,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:subClassOf :Trophiestufe .
+
+:hypertroph a :hypertroph,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:subClassOf :Trophiestufe .
+
+:mesotroph a :mesotroph,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:subClassOf :Trophiestufe .
+
+:oligotroph a :oligotroph,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:subClassOf :Trophiestufe .
+
+:Gewässer a owl:Class .
+
+:Trophiestufe a owl:ObjectProperty .
+

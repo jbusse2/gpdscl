@@ -1,0 +1,400 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+
+# ONTOLOGY, predicate        ID_1456425654 2021-01-19 13:45:02
+
+@prefix : <http://jbusse.de/ontologies/gewaesser#> .
+    @base <http://jbusse.de/ontologies/gewaesser#> .
+    <http://jbusse.de/ontologies/gewaesser#> rdf:type owl:Ontology .
+    
+
+# ONTOLOGY, object        ID_1936719561 2021-01-19 13:44:50
+
+:Gewässer a owl:Class.
+
+# BY, predicate        ID_505798876 2021-01-14 17:01:21
+
+:Salzgehalt a owl:ObjectProperty .
+
+# BY, object        ID_318603048 2021-01-14 17:18:15
+
+:Salzwasser a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_442317624 2021-01-14 20:31:25
+
+:Süßwasser a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1259118166 2021-01-14 17:18:24
+
+:Brackwasser a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_442938628 2021-01-14 17:01:21
+
+:Stellung_im_Gewässersystem a owl:ObjectProperty .
+
+# BY, object        ID_965849686 2021-01-15 11:09:06
+
+:Meer a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_671484745 2021-01-15 12:45:53
+
+:Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1142058703 2021-01-15 11:09:08
+
+:Binnengewässer a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_1308991092 2021-01-15 11:09:10
+
+:Lage_des_Wasserkörpers a owl:ObjectProperty .
+
+# BY, object        ID_669827480 2021-01-15 12:45:53
+
+:Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_1551467368 2021-01-15 12:45:53
+
+:Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_54597809 2021-01-15 12:00:25
+
+:Quelle a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_1368914530 2021-01-15 12:00:29
+
+:Schwinde a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_1496671923 2021-01-15 11:09:17
+
+:Strömungsverhalten a owl:ObjectProperty .
+
+# BY, object        ID_1261609446 2021-01-15 12:07:19
+
+:Fließgewässer a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_14307755 2021-01-19 14:48:59
+
+:Stillgewässer a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_49860073 2021-01-15 11:09:26
+
+:Zirkulationstyp a owl:ObjectProperty .
+
+# BY, object        ID_861922265 2021-01-15 12:45:53
+
+:Stillgewässer_Zirkulationstyp_SOME_amiktisch a owl:Class ;
+            rdfs:subClassOf :Stillgewässer .
+
+
+# AP, predicate        ID_1314493317 2021-01-19 13:54:41
+
+rdfs:comment a owl:AnnotationProperty .
+
+:Stillgewässer_Zirkulationstyp_SOME_amiktisch rdfs:comment "AP rdfs:comment" .
+
+# BY, object        ID_1656869749 2021-01-15 12:45:53
+
+:Stillgewässer_Zirkulationstyp_SOME_meromiktisch a owl:Class ;
+            rdfs:subClassOf :Stillgewässer .
+
+
+# AP, predicate        ID_624649777 2021-01-19 13:54:41
+
+rdfs:comment a owl:AnnotationProperty .
+
+:Stillgewässer_Zirkulationstyp_SOME_meromiktisch rdfs:comment "AP rdfs:comment" .
+
+# BY, object        ID_1918708915 2021-01-15 12:45:53
+
+:Stillgewässer_Zirkulationstyp_SOME_holomiktisch a owl:Class ;
+            rdfs:subClassOf :Stillgewässer .
+
+
+# AP, predicate        ID_843628553 2021-01-19 13:54:41
+
+rdfs:comment a owl:AnnotationProperty .
+
+:Stillgewässer_Zirkulationstyp_SOME_holomiktisch rdfs:comment "AP rdfs:comment" .
+
+# BY, object        ID_1060383414 2021-01-15 12:45:53
+
+:Binnengewässer_Strömungsverhalten_SOME_strömungsfrei a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_73690593 2021-01-15 11:09:17
+
+:Entstehungstyp a owl:ObjectProperty .
+
+# BY, object        ID_973479619 2021-01-15 12:45:53
+
+:Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_485165036 2021-01-15 12:45:53
+
+:Binnengewässer_Entstehungstyp_SOME_künstlich a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_1099319032 2021-01-15 11:09:17
+
+:Zugänglichkeit a owl:ObjectProperty .
+
+# BY, object        ID_211063235 2021-01-15 12:45:53
+
+:Binnengewässer_Zugänglichkeit_SOME_offen a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_406809138 2021-01-15 12:45:53
+
+:Binnengewässer_Zugänglichkeit_SOME_geschlossen a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_920935240 2021-01-15 11:09:26
+
+:Entwässerung a owl:ObjectProperty .
+
+# BY, object        ID_1063366294 2021-01-15 12:45:53
+
+:Binnengewässer_Entwässerung_SOME_exorheisch a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_753060196 2021-01-15 12:45:53
+
+:Binnengewässer_Entwässerung_SOME_endorheisch a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_894905855 2021-01-15 11:09:31
+
+:Wasserführung_im_Zeitverlauf a owl:ObjectProperty .
+
+# BY, object        ID_160014632 2021-01-15 12:45:53
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_675547391 2021-01-15 12:45:53
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_1189579234 2021-01-15 12:45:53
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_1300386613 2021-01-15 12:45:53
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_105758235 2021-01-15 12:45:53
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_1615616572 2021-01-15 11:09:42
+
+:Gewässerfarbe a owl:ObjectProperty .
+
+# BY, object        ID_1892135924 2021-01-15 12:45:53
+
+:Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_1505657181 2021-01-15 12:45:53
+
+:Binnengewässer_Gewässerfarbe_SOME_helltrüb a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, object        ID_1485251535 2021-01-15 12:45:53
+
+:Binnengewässer_Gewässerfarbe_SOME_klar a owl:Class ;
+            rdfs:subClassOf :Binnengewässer .
+
+
+# BY, predicate        ID_1441797657 2021-01-15 11:09:53
+
+:Trennung_vom_Meer a owl:ObjectProperty .
+
+# BY, object        ID_519344887 2021-01-15 12:45:53
+
+:Gewässer_Trennung_vom_Meer_SOME_Inselkette a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1551063691 2021-01-15 12:45:53
+
+:Gewässer_Trennung_vom_Meer_SOME_Festland a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1425072278 2021-01-15 12:45:53
+
+:Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1217435053 2021-01-15 12:45:53
+
+:Gewässer_Trennung_vom_Meer_SOME_Meerenge a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_857781736 2021-01-14 17:01:21
+
+:Größe a owl:ObjectProperty .
+
+# BY, object        ID_140977439 2021-01-15 12:45:53
+
+:Gewässer_Größe_SOME_sehr_groß a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1005344841 2021-01-15 12:45:53
+
+:Gewässer_Größe_SOME_groß a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_238117282 2021-01-15 12:45:53
+
+:Gewässer_Größe_SOME_klein a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_355458390 2021-01-14 17:01:21
+
+:Tiefe a owl:ObjectProperty .
+
+# BY, object        ID_1409184999 2021-01-15 12:45:53
+
+:Gewässer_Tiefe_SOME_tief a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_153167727 2021-01-15 12:45:53
+
+:Gewässer_Tiefe_SOME_mäßig_tief a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_194038908 2021-01-15 12:45:53
+
+:Gewässer_Tiefe_SOME_flach a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_1449600205 2021-01-14 17:01:21
+
+:Trophiestufe a owl:ObjectProperty .
+
+# BY, object        ID_1260890827 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_oligotroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_440590526 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_mesotroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_340097028 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_eutroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1784703466 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_hypertroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_1677746201 2021-01-14 17:01:21
+
+:ökologischer_Zustand a owl:ObjectProperty .
+
+# BY, object        ID_1235941310 2021-01-15 12:45:53
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_660935940 2021-01-15 12:45:53
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_68653163 2021-01-15 12:45:53
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_1083485239 2021-01-15 12:45:53
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, object        ID_911250002 2021-01-15 12:45:53
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+
+# BY, predicate        ID_1604888519 2021-01-14 17:01:21
+
+:Sättigung_mit_Wasser a owl:ObjectProperty .
+
+# BY, object        ID_1388604032 2021-01-15 12:45:53
+
+:Gewässer_Sättigung_mit_Wasser_SOME_phreatisch a owl:Class ;
+            rdfs:subClassOf :Gewässer .

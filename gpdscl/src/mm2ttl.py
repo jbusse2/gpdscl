@@ -21,15 +21,16 @@
 #
 #
 # * Johannes Busse, <http://www.jbusse.de/gpdscl>, email: jbusse at jbusse dot de
-# * Version 0.24, 2021-01-19
+# * Version 0.26, 2021-02-16
 #
-# This early version of the documentation still contains text in DE. We ask for your understanding.
+# This early version of the documentation still contains a significant amount of text in DE. We ask for your understanding.
 #
 #
-#
-# jupytext: 
-# * pair with percent script to get a .py file which can be imported
-# * pair with Myst-Markdown to write jupytext-docu in an external editor
+# generate .py version with jupytext: 
+# * pair ipynb with percent script to get a .py file which can be imported
+# * pair ipynb with Myst-Markdown, get .md file
+# * edit .md file in an external editor
+# * reload .ipynb, edit minimally, save: jupytext automatically writes also .md and .py
 
 # %%
 import xml.etree.ElementTree as ET
@@ -37,11 +38,11 @@ from xml.etree.ElementTree import Element, SubElement
 from datetime import datetime
 from xml.sax.saxutils import escape, unescape, quoteattr
 
-# %%
-classificationAxioms = False
-restrictionSomeAxioms = False
-owl2punning = True
 
+# %%
+#classificationAxioms = False
+#restrictionSomeAxioms = False
+#owl2punning = True
 
 # %% [markdown]
 # ## Einführung (DE)
@@ -112,13 +113,11 @@ def listOfChildIris(node):
 
 
 # %%
-def attachToNode(node, text, highlight):
-
-    """add a text note to a mindmap node"""
-
-    [ node.remove(n) for n in node.findall('font') ]
-    node.attrib['BACKGROUND_COLOR'] = "#ffffff"
-    node.attrib['STYLE'] = "fork"
+def attachToNode(node, text, highlight,  codeType = 'owl' ):
+    """add <pre>text</pre> to existing node/richcontent[@TYPE='NOTE']/html/body.
+    highlight      ... a string like 'predicate', 'class' etc.
+    codeType       ... a string like 'owl', 'intersection' etc.
+    """
     
     if highlight == 'predicate':
         ET.SubElement(node, 'font', {'ITALIC': 'true'})
@@ -138,14 +137,9 @@ def attachToNode(node, text, highlight):
         node.attrib['BACKGROUND_COLOR'] = "#ff0000"
         node.attrib['COLOR'] = "#000000"
     
-    if node.find('richcontent') != None:
-        for r in node.findall('richcontent'):
-            node.remove(r)  
+    body = node.find('richcontent[@TYPE="NOTE"]/html/body')
     
-    richcontent = ET.SubElement(node, 'richcontent', attrib = {'TYPE': 'NOTE'})
-    html = ET.SubElement(richcontent, 'html')
-    body = ET.SubElement(html, 'body')
-    pre = ET.SubElement(body, 'pre')
+    pre = ET.SubElement(body, 'pre', {'codeType': codeType} )
     pre.text = text
 
 
@@ -194,7 +188,7 @@ def ERROR(node, text):
 # Traverse the xml file of a freeplane mindmap in depth first order. If we find a node which stars with "ONTOLOGY " we start to interpret the subtree as a gpdscl annotated mindmap.
 
 # %%
-def searchForOntology(node):
+def searchForOntology(node, baseUri):
 
     """walk mindmap, search for nodes with tag 'ONTOLOGY' """
     if test_button_cancel(node): return
@@ -202,11 +196,11 @@ def searchForOntology(node):
     myTag, myIri = makeIriFromNode(node, 1)
     
     if myTag == 'ONTOLOGY':
-        ONTOLOGY(node, 'predicate', gp=None, dsa=None, dt=None)
+        ONTOLOGY(node, 'predicate', gp=None, dsa=None, dt=None, baseUri = baseUri)
     
     else:
         for n in node.findall("node"):
-            searchForOntology(n)
+            searchForOntology(n, baseUri)
 
 
 # %% [markdown]
@@ -250,7 +244,7 @@ def walkPredicateInstances(node, *, s, p, o):
 # ### ONTOLOGY
 
 # %%
-def ONTOLOGY(node, elementType, *, gp, dsa, dt):
+def ONTOLOGY(node, elementType, *, gp, dsa, dt, baseUri):
     if test_button_cancel(node): return
 
     # ONTOLOGY source (predicate, new dsa)  # we are called here
@@ -259,8 +253,14 @@ def ONTOLOGY(node, elementType, *, gp, dsa, dt):
     
     myTag, myIri = makeIriFromNode(node, 1)
 
+    ontologyIri = f"<{baseUri}{myIri[1:]}#>"
     owlCode = verbose(node, "ONTOLOGY, predicate", 2)
-    owlCode += f"""\n@prefix : <http://jbusse.de/ontology/mm2owl#> ."""
+
+    owlCode += f"""\n@prefix : {ontologyIri} .
+    @base {ontologyIri} .
+    {ontologyIri} rdf:type owl:Ontology .
+    """
+    
     attachToNode(node, owlCode, 'predicate')
         
     for n in listOfValidChildren(node):
@@ -321,10 +321,10 @@ def BY(node, elementType, *, gp, dsa, dt):
             childIriSome = [ makeIriFromNode(child, 1)[1] \
                             for child in listOfValidChildren(n)\
                             if makeIriFromNode(child, 1)[0] == 'SOME']
-            print(childIriSome)
+            # print(childIriSome)
             if len(childIriSome) > 0:
                 if childIriSome[0] != "":
-                    myIri = f"{dt}_{dsa[1:]}_{childIriSome[0][1:]}"
+                    myIri = f"{dt}_{dsa[1:]}_SOME_{childIriSome[0][1:]}"
                 
         owlCode = verbose(n, "BY, object", 2)
         owlCode += f"""\n{myIri} a owl:Class ;
@@ -522,33 +522,31 @@ def SOME(node, elementType, *, gp, dsa, dt):
     # be careful: construct IRI without leading ":", attach later
     # eliminate ":" from dsa and dsv
     someClass = f"SOME_{dsa[1:]}_IS_{dsv[1:]}"  
-    # alternative: someClass = 'SOME_' + node.get('ID')  
-    
     andClass  = f"{gp}_AND_{someClass}"  # IRI gets the leading ":" from gp
 
     owlCode = verbose(node, "SOME, predicate", 2)
+    attachToNode(node, owlCode, 'predicate', 'verbose')
+    
+    owlCode = f"""\n:{someClass} a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+        owl:onProperty {dsa} ;
+        owl:someValuesFrom {dsv} ] ."""
+    attachToNode(node, owlCode, 'predicate', 'restriction')
 
-    if restrictionSomeAxioms:
-        owlCode += f"""\n:{someClass} a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty {dsa} ;
-            owl:someValuesFrom {dsv} ] ."""
+    owlCode = f"""\n{andClass} a owl:Class ;
+    rdfs:subClassOf {dt} ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( {gp} :{someClass} ) ] ."""
+    attachToNode(node, owlCode, 'predicate', 'intersection')
+    
+    owlCode = f"""\n# owl 2 punning
+    {dsv} a owl:Class ;
+        rdfs:subClassOf {dsa} .
 
-    if classificationAxioms:
-        owlCode += f"""\n{andClass} a owl:Class ;
-        rdfs:subClassOf {dt} ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( {gp} :{someClass} ) ] ."""
+    {dsv} rdf:type owl:NamedIndividual ;
+        a {dsv} ."""
+    attachToNode(node, owlCode, 'predicate', 'punning')        
 
-    if owl2punning:
-        owlCode += f"""\n# owl 2 punning
-        {dsv} a owl:Class ;
-            rdfs:subClassOf {dsa} .
-        
-        {dsv} rdf:type owl:NamedIndividual ;
-            a {dsv} ."""
-        
-    attachToNode(node, owlCode, 'predicate')       
     
     for n in listOfValidChildren(node):
         
@@ -575,9 +573,9 @@ def SOME(node, elementType, *, gp, dsa, dt):
 #       ISA
 #         Hengst
 #           SUP
-# 	    Maskulinum
-# 	    Pferd
-# 	    
+#             Maskulinum
+#             Pferd
+#             
 # Semantik wie bei ISA, nur in die andere Richtung notiert: Tier ist eine Obermenge von Kuh. (Zugegeben, das erscheint ungewohnt. Aber das ist der Tribut dafür, dass wir mit Mindmaps und Bäumen arbeiten wollen statt mit Graph-Tools. )
 #
 # Mit SUP lässt  sich in einer Mindmap die "untere Hälfte", genauer: der poly-hierarchische Teil einer FCA in einer Mindmap notieren.
@@ -634,6 +632,8 @@ def SUP(node, elementType, *, gp, dsa, dt):
         attachToNode(n, owlCode,'class')
         walkPredicates(n, gp=':myTopObject', dsa=':myTopDataProperty', dt=myIri)  # parameter shift here
 
+
+# %%
 
 # %% [markdown]
 # (ex)=
@@ -707,7 +707,45 @@ def AP(node, elementType, *, gp, dsa, dt):
     for n in listOfValidChildren(node):        
         
         owlCode = verbose(n, "AP, literal", 2)
-        owlCode = f"""\n{dt} {ap} {quoteattr(node.attrib['TEXT'])} ."""
+        owlCode = f"""\n{dt} {ap} {quoteattr(n.attrib['TEXT'])} ."""
+        
+        attachToNode(n, owlCode, 'text')
+        
+        # do not walkPredicates(...): We are at a dead end here. 
+        # instead search for ONTOLOGY:
+        
+        for n2 in listOfValidChildren(n):        
+            searchForOntology(n2)
+        
+
+
+# %% [markdown]
+# (def)=
+# ### DEF
+#
+# Definition (a specific annotation property)
+
+# %%
+def DEF(node, elementType, *, gp, dsa, dt):
+
+    """
+    DEF: definition, our most important annotation property
+    #        milk (object, dt)
+    #          DEF (predicate, new )  # we are called here
+    #            some text
+    """
+    
+    myTag, myIri = makeIriFromNode(node, 1)
+    ap = myIri if myIri != ':' else 'skos:definition' 
+
+    owlCode = verbose(node, "AP, predicate", 2)
+    owlCode += f"""\n{ap} a owl:AnnotationProperty ."""
+    attachToNode(node, owlCode, 'predicate')
+
+    for n in listOfValidChildren(node):        
+        
+        owlCode = verbose(n, "DEF, literal", 2)
+        owlCode = f"""\n{dt} {ap} {quoteattr(n.attrib['TEXT'])} ."""
         
         attachToNode(n, owlCode, 'text')
         
@@ -730,7 +768,8 @@ predicateTemplates = {
   'EX': EX,
   'AP': AP,
   'ISA': ISA,
- #'ASI': ASI ... use SUP instead
+   'DEF': DEF,
+ #'ASI': ... use SUP instead
  }
 
 
@@ -842,12 +881,33 @@ def XE(node, elementType, *, s, p, o):
         walkPredicates(n, gp=':myTopObject', dsa=':myTopObjectProperty', dt=':myTopObject')  # parameter shift here
 
 
+# %% [markdown]
+# ### AP and DEF (abox)
+#
+# AP und DEF sind auch für Objekte aus der A-box definiert.
+#
+
+# %%
+def APabox(node, elementType, *, s, p, o):
+    AP(node, elementType, gp = s, dsa = p, dt = o )
+    
+
+
+# %%
+def DEFabox(node, elementType, *, s, p, o):
+    DEF(node, elementType, gp = s, dsa = p, dt = o )
+    
+
+
 # %%
 # used by walkPredicateInstances()
 predicateInstanceTemplates = {
     'DP': DP,
     'OP': OP,
-    'XE': XE
+    'XE': XE,
+# we also allow some predicates from the T-box
+    'DEF': DEFabox,
+    'AP': APabox
 }
 
 
@@ -857,47 +917,70 @@ predicateInstanceTemplates = {
 # Walk through the mindmap graph and collect all `richcontent[@TYPE="NOTE"]/html/body/pre`-elements into the dict `owlEntries`.
 
 # %%
-def collectOwlEntries(owlEntries, node):
+def cleanMindmap(node, removeHook = False):
+    """remove node decorations and richtext stemming from earlier runs of mm2ttl"""
+    
     if test_button_cancel(node): return
-    pre = node.find('richcontent[@TYPE="NOTE"]/html/body/pre')
-    if pre != None:
-        myId = node.attrib['ID']
-        owlEntries[myId] = pre.text
-        # print("collectOwlEntries:", pre.text)
+    
+    # if removeHook == True:
+        # remove all style information from map - are you sure?
+        # [ node.remove(hook) for hook in node.findall('hook') ]
+    [ node.remove(font) for font in node.findall('font') ]
+    [ node.remove(r) for r in node.findall('richcontent[@TYPE="NOTE"]') ]
+    
+    # guarantee that there is a richcontent node
+    richcontent = ET.SubElement(node, 'richcontent', attrib = {'TYPE': 'NOTE'})
+    html = ET.SubElement(richcontent, 'html')
+    body = ET.SubElement(html, 'body')
+    
     for n in node.findall('node'):
-        collectOwlEntries(owlEntries, n)
+        cleanMindmap(n) 
+
+
+# %%
+def collectOwlEntries(owlEntries, node, codeTypeList = []):
+    if test_button_cancel(node): return
+
+    if len(codeTypeList) == 0: # get all pre elements
+        code = ""
+        for p in node.findall('richcontent[@TYPE="NOTE"]/html/body/pre'):
+            code += p.text
+        owlEntries[f'{node.get("ID")}'] = code
+
+    else: # get only pre elements which are in the nodeTypeList
+        for nt in codeTypeList:
+            code = ""
+            for p in node.findall('richcontent[@TYPE="NOTE"]/html/body/pre'):
+                if p.get('codeType') == nt:
+                    code += p.text 
+            owlEntries[f'{node.get("ID")}_{nt}'] = code             
+
+    for n in node.findall('node'):
+        collectOwlEntries(owlEntries, n, codeTypeList)
 
 
 # %% [markdown]
 # Join the dict `owlEntries` to get a string version of the ontology.
 
 # %%
-def mm2turtle(node, baseUri, *, verbosity=0):
-    searchForOntology(node)
+def mm2turtle(node, baseUri, *, verbosity=0, codeTypeList = []):
+    cleanMindmap(node)
+    searchForOntology(node, baseUri)
     owlEntries = {}
-    collectOwlEntries(owlEntries, node)
+    collectOwlEntries(owlEntries, node, codeTypeList)
     joinedCollectedOwlEntries = "\n".join(owlEntries.values())
-    ontologyString = f"""@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
-@prefix : <{baseUri}#> .
-@base <{baseUri}> .
-<{baseUri}> rdf:type owl:Ontology .
-
-{joinedCollectedOwlEntries}
-    """
-    print(f"ontologyString: {ontologyString}")
-    return ontologyString
+    return joinedCollectedOwlEntries
+    
+#    ontologyString = f"""@prefix : <{baseUri}#> .
+#@base <{baseUri}> .
+#<{baseUri}> rdf:type owl:Ontology .
+#
+#{joinedCollectedOwlEntries}
+#    """
+#    # print(f"ontologyString: {ontologyString}")
+#    return ontologyString
 #    return owlEntries
 
 # %%
-#hookNode = root.find('.//node[hook]')
-#if hookNode:
-#    hook = hookNode.find('hook')
-#    hookNode.remove(hook)
 
-
+# %%

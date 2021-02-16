@@ -1,0 +1,19 @@
+@prefix : <http://jbusse.de/ontologies/milk#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+: a owl:Ontology .
+
+:cow_milk a owl:Class ;
+    rdfs:subClassOf :milk .
+
+:goat_milk a owl:Class ;
+    rdfs:subClassOf :milk .
+
+:happy_cow_milk a :milk ;
+    :source :cow .
+
+:source a owl:ObjectProperty .
+
+:milk a owl:Class .
+

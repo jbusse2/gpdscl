@@ -1,4 +1,4 @@
-@prefix : <http://jbusse.de/ontologies/sandbox#> .
+@prefix : <http://jbusse.de/ontologies/milk#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,6 +6,11 @@
 
 : a owl:Ontology ;
     owl:sameAs : .
+
+:happy_cow_milk a :milk,
+        owl:Thing ;
+    :source :cow ;
+    owl:sameAs :happy_cow_milk .
 
 rdf:HTML a rdfs:Datatype ;
     owl:sameAs rdf:HTML .
@@ -154,61 +159,47 @@ owl:sameAs owl:sameAs owl:sameAs .
 owl:versionInfo a owl:AnnotationProperty ;
     owl:sameAs owl:versionInfo .
 
+:cow owl:sameAs :cow .
+
 owl:ObjectProperty owl:sameAs owl:ObjectProperty .
 
 owl:Ontology owl:sameAs owl:Ontology .
 
-:Trophiestufe a owl:ObjectProperty ;
-    rdfs:subPropertyOf :Trophiestufe ;
-    owl:equivalentProperty :Trophiestufe ;
-    owl:sameAs :Trophiestufe .
+:source a owl:ObjectProperty ;
+    rdfs:subPropertyOf :source ;
+    owl:equivalentProperty :source ;
+    owl:sameAs :source .
 
 owl:Nothing a owl:Class ;
-    rdfs:subClassOf :X,
-        :X_Trophiestufe_SOME_eutroph,
-        :X_Trophiestufe_SOME_hypertroph,
-        :X_Trophiestufe_SOME_mesotroph,
-        :X_Trophiestufe_SOME_oligotroph,
+    rdfs:subClassOf :cow_milk,
+        :goat_milk,
+        :milk,
         owl:Nothing,
         owl:Thing ;
     owl:equivalentClass owl:Nothing ;
     owl:sameAs owl:Nothing .
 
-:X_Trophiestufe_SOME_eutroph a owl:Class ;
-    rdfs:subClassOf :X,
-        :X_Trophiestufe_SOME_eutroph,
+:cow_milk a owl:Class ;
+    rdfs:subClassOf :cow_milk,
+        :milk,
         owl:Thing ;
-    owl:equivalentClass :X_Trophiestufe_SOME_eutroph ;
-    owl:sameAs :X_Trophiestufe_SOME_eutroph .
+    owl:equivalentClass :cow_milk ;
+    owl:sameAs :cow_milk .
 
-:X_Trophiestufe_SOME_hypertroph a owl:Class ;
-    rdfs:subClassOf :X,
-        :X_Trophiestufe_SOME_hypertroph,
+:goat_milk a owl:Class ;
+    rdfs:subClassOf :goat_milk,
+        :milk,
         owl:Thing ;
-    owl:equivalentClass :X_Trophiestufe_SOME_hypertroph ;
-    owl:sameAs :X_Trophiestufe_SOME_hypertroph .
-
-:X_Trophiestufe_SOME_mesotroph a owl:Class ;
-    rdfs:subClassOf :X,
-        :X_Trophiestufe_SOME_mesotroph,
-        owl:Thing ;
-    owl:equivalentClass :X_Trophiestufe_SOME_mesotroph ;
-    owl:sameAs :X_Trophiestufe_SOME_mesotroph .
-
-:X_Trophiestufe_SOME_oligotroph a owl:Class ;
-    rdfs:subClassOf :X,
-        :X_Trophiestufe_SOME_oligotroph,
-        owl:Thing ;
-    owl:equivalentClass :X_Trophiestufe_SOME_oligotroph ;
-    owl:sameAs :X_Trophiestufe_SOME_oligotroph .
-
-:X a owl:Class ;
-    rdfs:subClassOf :X,
-        owl:Thing ;
-    owl:equivalentClass :X ;
-    owl:sameAs :X .
+    owl:equivalentClass :goat_milk ;
+    owl:sameAs :goat_milk .
 
 owl:Class owl:sameAs owl:Class .
+
+:milk a owl:Class ;
+    rdfs:subClassOf :milk,
+        owl:Thing ;
+    owl:equivalentClass :milk ;
+    owl:sameAs :milk .
 
 owl:Thing a owl:Class ;
     rdfs:subClassOf owl:Thing ;

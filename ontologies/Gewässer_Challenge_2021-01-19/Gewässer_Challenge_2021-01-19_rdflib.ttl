@@ -1,0 +1,195 @@
+@prefix : <http://jbusse.de/ontologies/gewaesser#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+: a owl:Ontology .
+
+:Binnengewässer_Entstehungstyp_SOME_künstlich a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Entwässerung_SOME_endorheisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Entwässerung_SOME_exorheisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Gewässerfarbe_SOME_helltrüb a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Gewässerfarbe_SOME_klar a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Strömungsverhalten_SOME_strömungsfrei a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Zugänglichkeit_SOME_geschlossen a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer_Zugänglichkeit_SOME_offen a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Brackwasser a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Entstehungstyp a owl:ObjectProperty .
+
+:Entwässerung a owl:ObjectProperty .
+
+:Fließgewässer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Gewässer_Größe_SOME_groß a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Größe_SOME_klein a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Größe_SOME_sehr_groß a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Sättigung_mit_Wasser_SOME_phreatisch a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Tiefe_SOME_flach a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Tiefe_SOME_mäßig_tief a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Tiefe_SOME_tief a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trennung_vom_Meer_SOME_Festland a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trennung_vom_Meer_SOME_Inselkette a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trennung_vom_Meer_SOME_Meerenge a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_eutroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_hypertroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_mesotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_Trophiestufe_SOME_oligotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässerfarbe a owl:ObjectProperty .
+
+:Größe a owl:ObjectProperty .
+
+:Lage_des_Wasserkörpers a owl:ObjectProperty .
+
+:Meer a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Quelle a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Salzgehalt a owl:ObjectProperty .
+
+:Salzwasser a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Schwinde a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Stellung_im_Gewässersystem a owl:ObjectProperty .
+
+:Stillgewässer_Zirkulationstyp_SOME_amiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Stillgewässer .
+
+:Stillgewässer_Zirkulationstyp_SOME_holomiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Stillgewässer .
+
+:Stillgewässer_Zirkulationstyp_SOME_meromiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Stillgewässer .
+
+:Strömungsverhalten a owl:ObjectProperty .
+
+:Sättigung_mit_Wasser a owl:ObjectProperty .
+
+:Süßwasser a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Tiefe a owl:ObjectProperty .
+
+:Trennung_vom_Meer a owl:ObjectProperty .
+
+:Trophiestufe a owl:ObjectProperty .
+
+:Wasserführung_im_Zeitverlauf a owl:ObjectProperty .
+
+:Zirkulationstyp a owl:ObjectProperty .
+
+:Zugänglichkeit a owl:ObjectProperty .
+
+:ökologischer_Zustand a owl:ObjectProperty .
+
+rdfs:comment a owl:AnnotationProperty .
+
+:Stillgewässer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer .
+
+:Binnengewässer a owl:Class ;
+    rdfs:subClassOf :Gewässer .
+
+:Gewässer a owl:Class .
+

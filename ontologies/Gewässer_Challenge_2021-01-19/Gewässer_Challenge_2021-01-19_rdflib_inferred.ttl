@@ -1,0 +1,696 @@
+@prefix : <http://jbusse.de/ontologies/gewaesser#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+: a owl:Ontology ;
+    owl:sameAs : .
+
+rdf:HTML a rdfs:Datatype ;
+    owl:sameAs rdf:HTML .
+
+rdf:LangString a rdfs:Datatype ;
+    owl:sameAs rdf:LangString .
+
+rdf:PlainLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:PlainLiteral .
+
+rdf:XMLLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:XMLLiteral .
+
+rdf:type owl:sameAs rdf:type .
+
+rdfs:Literal a rdfs:Datatype ;
+    owl:sameAs rdfs:Literal .
+
+rdfs:comment a owl:AnnotationProperty ;
+    owl:sameAs rdfs:comment .
+
+rdfs:isDefinedBy a owl:AnnotationProperty ;
+    owl:sameAs rdfs:isDefinedBy .
+
+rdfs:label a owl:AnnotationProperty ;
+    owl:sameAs rdfs:label .
+
+rdfs:seeAlso a owl:AnnotationProperty ;
+    owl:sameAs rdfs:seeAlso .
+
+rdfs:subClassOf owl:sameAs rdfs:subClassOf .
+
+rdfs:subPropertyOf owl:sameAs rdfs:subPropertyOf .
+
+xsd:NCName a rdfs:Datatype ;
+    owl:sameAs xsd:NCName .
+
+xsd:NMTOKEN a rdfs:Datatype ;
+    owl:sameAs xsd:NMTOKEN .
+
+xsd:Name a rdfs:Datatype ;
+    owl:sameAs xsd:Name .
+
+xsd:anyURI a rdfs:Datatype ;
+    owl:sameAs xsd:anyURI .
+
+xsd:base64Binary a rdfs:Datatype ;
+    owl:sameAs xsd:base64Binary .
+
+xsd:boolean a rdfs:Datatype ;
+    owl:sameAs xsd:boolean .
+
+xsd:byte a rdfs:Datatype ;
+    owl:sameAs xsd:byte .
+
+xsd:date a rdfs:Datatype ;
+    owl:sameAs xsd:date .
+
+xsd:dateTime a rdfs:Datatype ;
+    owl:sameAs xsd:dateTime .
+
+xsd:dateTimeStamp a rdfs:Datatype ;
+    owl:sameAs xsd:dateTimeStamp .
+
+xsd:decimal a rdfs:Datatype ;
+    owl:sameAs xsd:decimal .
+
+xsd:double a rdfs:Datatype ;
+    owl:sameAs xsd:double .
+
+xsd:float a rdfs:Datatype ;
+    owl:sameAs xsd:float .
+
+xsd:hexBinary a rdfs:Datatype ;
+    owl:sameAs xsd:hexBinary .
+
+xsd:int a rdfs:Datatype ;
+    owl:sameAs xsd:int .
+
+xsd:integer a rdfs:Datatype ;
+    owl:sameAs xsd:integer .
+
+xsd:language a rdfs:Datatype ;
+    owl:sameAs xsd:language .
+
+xsd:long a rdfs:Datatype ;
+    owl:sameAs xsd:long .
+
+xsd:negativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:negativeInteger .
+
+xsd:nonNegativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonNegativeInteger .
+
+xsd:nonPositiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonPositiveInteger .
+
+xsd:normalizedString a rdfs:Datatype ;
+    owl:sameAs xsd:normalizedString .
+
+xsd:positiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:positiveInteger .
+
+xsd:short a rdfs:Datatype ;
+    owl:sameAs xsd:short .
+
+xsd:string a rdfs:Datatype ;
+    owl:sameAs xsd:string .
+
+xsd:time a rdfs:Datatype ;
+    owl:sameAs xsd:time .
+
+xsd:token a rdfs:Datatype ;
+    owl:sameAs xsd:token .
+
+xsd:unsignedByte a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedByte .
+
+xsd:unsignedInt a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedInt .
+
+xsd:unsignedLong a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedLong .
+
+xsd:unsignedShort a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedShort .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:backwardCompatibleWith .
+
+owl:deprecated a owl:AnnotationProperty ;
+    owl:sameAs owl:deprecated .
+
+owl:equivalentClass owl:sameAs owl:equivalentClass .
+
+owl:equivalentProperty owl:sameAs owl:equivalentProperty .
+
+owl:incompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:incompatibleWith .
+
+owl:priorVersion a owl:AnnotationProperty ;
+    owl:sameAs owl:priorVersion .
+
+owl:sameAs owl:sameAs owl:sameAs .
+
+owl:versionInfo a owl:AnnotationProperty ;
+    owl:sameAs owl:versionInfo .
+
+owl:Ontology owl:sameAs owl:Ontology .
+
+:Entstehungstyp a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Entstehungstyp ;
+    owl:equivalentProperty :Entstehungstyp ;
+    owl:sameAs :Entstehungstyp .
+
+:Entwässerung a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Entwässerung ;
+    owl:equivalentProperty :Entwässerung ;
+    owl:sameAs :Entwässerung .
+
+:Gewässerfarbe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Gewässerfarbe ;
+    owl:equivalentProperty :Gewässerfarbe ;
+    owl:sameAs :Gewässerfarbe .
+
+:Größe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Größe ;
+    owl:equivalentProperty :Größe ;
+    owl:sameAs :Größe .
+
+:Lage_des_Wasserkörpers a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Lage_des_Wasserkörpers ;
+    owl:equivalentProperty :Lage_des_Wasserkörpers ;
+    owl:sameAs :Lage_des_Wasserkörpers .
+
+:Salzgehalt a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Salzgehalt ;
+    owl:equivalentProperty :Salzgehalt ;
+    owl:sameAs :Salzgehalt .
+
+:Stellung_im_Gewässersystem a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Stellung_im_Gewässersystem ;
+    owl:equivalentProperty :Stellung_im_Gewässersystem ;
+    owl:sameAs :Stellung_im_Gewässersystem .
+
+:Strömungsverhalten a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Strömungsverhalten ;
+    owl:equivalentProperty :Strömungsverhalten ;
+    owl:sameAs :Strömungsverhalten .
+
+:Sättigung_mit_Wasser a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Sättigung_mit_Wasser ;
+    owl:equivalentProperty :Sättigung_mit_Wasser ;
+    owl:sameAs :Sättigung_mit_Wasser .
+
+:Tiefe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Tiefe ;
+    owl:equivalentProperty :Tiefe ;
+    owl:sameAs :Tiefe .
+
+:Trennung_vom_Meer a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Trennung_vom_Meer ;
+    owl:equivalentProperty :Trennung_vom_Meer ;
+    owl:sameAs :Trennung_vom_Meer .
+
+:Trophiestufe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Trophiestufe ;
+    owl:equivalentProperty :Trophiestufe ;
+    owl:sameAs :Trophiestufe .
+
+:Wasserführung_im_Zeitverlauf a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Wasserführung_im_Zeitverlauf ;
+    owl:equivalentProperty :Wasserführung_im_Zeitverlauf ;
+    owl:sameAs :Wasserführung_im_Zeitverlauf .
+
+:Zirkulationstyp a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Zirkulationstyp ;
+    owl:equivalentProperty :Zirkulationstyp ;
+    owl:sameAs :Zirkulationstyp .
+
+:Zugänglichkeit a owl:ObjectProperty ;
+    rdfs:subPropertyOf :Zugänglichkeit ;
+    owl:equivalentProperty :Zugänglichkeit ;
+    owl:sameAs :Zugänglichkeit .
+
+:ökologischer_Zustand a owl:ObjectProperty ;
+    rdfs:subPropertyOf :ökologischer_Zustand ;
+    owl:equivalentProperty :ökologischer_Zustand ;
+    owl:sameAs :ökologischer_Zustand .
+
+owl:Nothing a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Entstehungstyp_SOME_künstlich,
+        :Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden,
+        :Binnengewässer_Entwässerung_SOME_endorheisch,
+        :Binnengewässer_Entwässerung_SOME_exorheisch,
+        :Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb,
+        :Binnengewässer_Gewässerfarbe_SOME_helltrüb,
+        :Binnengewässer_Gewässerfarbe_SOME_klar,
+        :Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch,
+        :Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend,
+        :Binnengewässer_Strömungsverhalten_SOME_strömungsfrei,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch,
+        :Binnengewässer_Zugänglichkeit_SOME_geschlossen,
+        :Binnengewässer_Zugänglichkeit_SOME_offen,
+        :Brackwasser,
+        :Fließgewässer,
+        :Gewässer,
+        :Gewässer_Größe_SOME_groß,
+        :Gewässer_Größe_SOME_klein,
+        :Gewässer_Größe_SOME_sehr_groß,
+        :Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah,
+        :Gewässer_Sättigung_mit_Wasser_SOME_phreatisch,
+        :Gewässer_Tiefe_SOME_flach,
+        :Gewässer_Tiefe_SOME_mäßig_tief,
+        :Gewässer_Tiefe_SOME_tief,
+        :Gewässer_Trennung_vom_Meer_SOME_Festland,
+        :Gewässer_Trennung_vom_Meer_SOME_Inselkette,
+        :Gewässer_Trennung_vom_Meer_SOME_Meerenge,
+        :Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle,
+        :Gewässer_Trophiestufe_SOME_eutroph,
+        :Gewässer_Trophiestufe_SOME_hypertroph,
+        :Gewässer_Trophiestufe_SOME_mesotroph,
+        :Gewässer_Trophiestufe_SOME_oligotroph,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend,
+        :Meer,
+        :Quelle,
+        :Salzwasser,
+        :Schwinde,
+        :Stillgewässer,
+        :Stillgewässer_Zirkulationstyp_SOME_amiktisch,
+        :Stillgewässer_Zirkulationstyp_SOME_holomiktisch,
+        :Stillgewässer_Zirkulationstyp_SOME_meromiktisch,
+        :Süßwasser,
+        owl:Nothing,
+        owl:Thing ;
+    owl:equivalentClass owl:Nothing ;
+    owl:sameAs owl:Nothing .
+
+:Binnengewässer_Entstehungstyp_SOME_künstlich a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Entstehungstyp_SOME_künstlich,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Entstehungstyp_SOME_künstlich ;
+    owl:sameAs :Binnengewässer_Entstehungstyp_SOME_künstlich .
+
+:Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden ;
+    owl:sameAs :Binnengewässer_Entstehungstyp_SOME_natürlich_entstanden .
+
+:Binnengewässer_Entwässerung_SOME_endorheisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Entwässerung_SOME_endorheisch,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Entwässerung_SOME_endorheisch ;
+    owl:sameAs :Binnengewässer_Entwässerung_SOME_endorheisch .
+
+:Binnengewässer_Entwässerung_SOME_exorheisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Entwässerung_SOME_exorheisch,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Entwässerung_SOME_exorheisch ;
+    owl:sameAs :Binnengewässer_Entwässerung_SOME_exorheisch .
+
+:Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb ;
+    owl:sameAs :Binnengewässer_Gewässerfarbe_SOME_dunkeltrüb .
+
+:Binnengewässer_Gewässerfarbe_SOME_helltrüb a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Gewässerfarbe_SOME_helltrüb,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Gewässerfarbe_SOME_helltrüb ;
+    owl:sameAs :Binnengewässer_Gewässerfarbe_SOME_helltrüb .
+
+:Binnengewässer_Gewässerfarbe_SOME_klar a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Gewässerfarbe_SOME_klar,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Gewässerfarbe_SOME_klar ;
+    owl:sameAs :Binnengewässer_Gewässerfarbe_SOME_klar .
+
+:Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch ;
+    owl:sameAs :Binnengewässer_Lage_des_Wasserkörpers_SOME_unterirdisch .
+
+:Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend ;
+    owl:sameAs :Binnengewässer_Lage_des_Wasserkörpers_SOME_über_der_Erde_liegend .
+
+:Binnengewässer_Strömungsverhalten_SOME_strömungsfrei a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Strömungsverhalten_SOME_strömungsfrei,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Strömungsverhalten_SOME_strömungsfrei ;
+    owl:sameAs :Binnengewässer_Strömungsverhalten_SOME_strömungsfrei .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer ;
+    owl:sameAs :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_ephemer .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch ;
+    owl:sameAs :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_episodisch .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend ;
+    owl:sameAs :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_intermittierend .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend ;
+    owl:sameAs :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_perennierend .
+
+:Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch ;
+    owl:sameAs :Binnengewässer_Wasserführung_im_Zeitverlauf_SOME_periodisch .
+
+:Binnengewässer_Zugänglichkeit_SOME_geschlossen a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Zugänglichkeit_SOME_geschlossen,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Zugänglichkeit_SOME_geschlossen ;
+    owl:sameAs :Binnengewässer_Zugänglichkeit_SOME_geschlossen .
+
+:Binnengewässer_Zugänglichkeit_SOME_offen a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Binnengewässer_Zugänglichkeit_SOME_offen,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer_Zugänglichkeit_SOME_offen ;
+    owl:sameAs :Binnengewässer_Zugänglichkeit_SOME_offen .
+
+:Brackwasser a owl:Class ;
+    rdfs:subClassOf :Brackwasser,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Brackwasser ;
+    owl:sameAs :Brackwasser .
+
+:Fließgewässer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Fließgewässer,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Fließgewässer ;
+    owl:sameAs :Fließgewässer .
+
+:Gewässer_Größe_SOME_groß a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Größe_SOME_groß,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Größe_SOME_groß ;
+    owl:sameAs :Gewässer_Größe_SOME_groß .
+
+:Gewässer_Größe_SOME_klein a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Größe_SOME_klein,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Größe_SOME_klein ;
+    owl:sameAs :Gewässer_Größe_SOME_klein .
+
+:Gewässer_Größe_SOME_sehr_groß a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Größe_SOME_sehr_groß,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Größe_SOME_sehr_groß ;
+    owl:sameAs :Gewässer_Größe_SOME_sehr_groß .
+
+:Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah ;
+    owl:sameAs :Gewässer_Stellung_im_Gewässersystem_SOME_festlandnah .
+
+:Gewässer_Sättigung_mit_Wasser_SOME_phreatisch a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Sättigung_mit_Wasser_SOME_phreatisch,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Sättigung_mit_Wasser_SOME_phreatisch ;
+    owl:sameAs :Gewässer_Sättigung_mit_Wasser_SOME_phreatisch .
+
+:Gewässer_Tiefe_SOME_flach a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Tiefe_SOME_flach,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Tiefe_SOME_flach ;
+    owl:sameAs :Gewässer_Tiefe_SOME_flach .
+
+:Gewässer_Tiefe_SOME_mäßig_tief a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Tiefe_SOME_mäßig_tief,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Tiefe_SOME_mäßig_tief ;
+    owl:sameAs :Gewässer_Tiefe_SOME_mäßig_tief .
+
+:Gewässer_Tiefe_SOME_tief a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Tiefe_SOME_tief,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Tiefe_SOME_tief ;
+    owl:sameAs :Gewässer_Tiefe_SOME_tief .
+
+:Gewässer_Trennung_vom_Meer_SOME_Festland a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trennung_vom_Meer_SOME_Festland,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trennung_vom_Meer_SOME_Festland ;
+    owl:sameAs :Gewässer_Trennung_vom_Meer_SOME_Festland .
+
+:Gewässer_Trennung_vom_Meer_SOME_Inselkette a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trennung_vom_Meer_SOME_Inselkette,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trennung_vom_Meer_SOME_Inselkette ;
+    owl:sameAs :Gewässer_Trennung_vom_Meer_SOME_Inselkette .
+
+:Gewässer_Trennung_vom_Meer_SOME_Meerenge a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trennung_vom_Meer_SOME_Meerenge,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trennung_vom_Meer_SOME_Meerenge ;
+    owl:sameAs :Gewässer_Trennung_vom_Meer_SOME_Meerenge .
+
+:Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle ;
+    owl:sameAs :Gewässer_Trennung_vom_Meer_SOME_Meeresschwelle .
+
+:Gewässer_Trophiestufe_SOME_eutroph a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trophiestufe_SOME_eutroph,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trophiestufe_SOME_eutroph ;
+    owl:sameAs :Gewässer_Trophiestufe_SOME_eutroph .
+
+:Gewässer_Trophiestufe_SOME_hypertroph a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trophiestufe_SOME_hypertroph,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trophiestufe_SOME_hypertroph ;
+    owl:sameAs :Gewässer_Trophiestufe_SOME_hypertroph .
+
+:Gewässer_Trophiestufe_SOME_mesotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trophiestufe_SOME_mesotroph,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trophiestufe_SOME_mesotroph ;
+    owl:sameAs :Gewässer_Trophiestufe_SOME_mesotroph .
+
+:Gewässer_Trophiestufe_SOME_oligotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_Trophiestufe_SOME_oligotroph,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_Trophiestufe_SOME_oligotroph ;
+    owl:sameAs :Gewässer_Trophiestufe_SOME_oligotroph .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut ;
+    owl:sameAs :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_gut .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig ;
+    owl:sameAs :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_mäßig .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht ;
+    owl:sameAs :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_schlecht .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut ;
+    owl:sameAs :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_sehr_gut .
+
+:Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend ;
+    owl:sameAs :Gewässer_ökologischer_Zustand_SOME_ökologischer_Zustand_unbefriedigend .
+
+:Meer a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Meer,
+        owl:Thing ;
+    owl:equivalentClass :Meer ;
+    owl:sameAs :Meer .
+
+:Quelle a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        :Quelle,
+        owl:Thing ;
+    owl:equivalentClass :Quelle ;
+    owl:sameAs :Quelle .
+
+:Salzwasser a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Salzwasser,
+        owl:Thing ;
+    owl:equivalentClass :Salzwasser ;
+    owl:sameAs :Salzwasser .
+
+:Schwinde a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        :Schwinde,
+        owl:Thing ;
+    owl:equivalentClass :Schwinde ;
+    owl:sameAs :Schwinde .
+
+:Stillgewässer_Zirkulationstyp_SOME_amiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        :Stillgewässer,
+        :Stillgewässer_Zirkulationstyp_SOME_amiktisch,
+        owl:Thing ;
+    owl:equivalentClass :Stillgewässer_Zirkulationstyp_SOME_amiktisch ;
+    owl:sameAs :Stillgewässer_Zirkulationstyp_SOME_amiktisch .
+
+:Stillgewässer_Zirkulationstyp_SOME_holomiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        :Stillgewässer,
+        :Stillgewässer_Zirkulationstyp_SOME_holomiktisch,
+        owl:Thing ;
+    owl:equivalentClass :Stillgewässer_Zirkulationstyp_SOME_holomiktisch ;
+    owl:sameAs :Stillgewässer_Zirkulationstyp_SOME_holomiktisch .
+
+:Stillgewässer_Zirkulationstyp_SOME_meromiktisch a owl:Class ;
+    rdfs:comment "AP rdfs:comment" ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        :Stillgewässer,
+        :Stillgewässer_Zirkulationstyp_SOME_meromiktisch,
+        owl:Thing ;
+    owl:equivalentClass :Stillgewässer_Zirkulationstyp_SOME_meromiktisch ;
+    owl:sameAs :Stillgewässer_Zirkulationstyp_SOME_meromiktisch .
+
+:Süßwasser a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        :Süßwasser,
+        owl:Thing ;
+    owl:equivalentClass :Süßwasser ;
+    owl:sameAs :Süßwasser .
+
+"AP rdfs:comment" owl:sameAs "AP rdfs:comment" .
+
+:Stillgewässer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        :Stillgewässer,
+        owl:Thing ;
+    owl:equivalentClass :Stillgewässer ;
+    owl:sameAs :Stillgewässer .
+
+owl:AnnotationProperty owl:sameAs owl:AnnotationProperty .
+
+owl:ObjectProperty owl:sameAs owl:ObjectProperty .
+
+:Binnengewässer a owl:Class ;
+    rdfs:subClassOf :Binnengewässer,
+        :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Binnengewässer ;
+    owl:sameAs :Binnengewässer .
+
+rdfs:Datatype owl:sameAs rdfs:Datatype .
+
+:Gewässer a owl:Class ;
+    rdfs:subClassOf :Gewässer,
+        owl:Thing ;
+    owl:equivalentClass :Gewässer ;
+    owl:sameAs :Gewässer .
+
+owl:Class owl:sameAs owl:Class .
+
+owl:Thing a owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass owl:Thing ;
+    owl:sameAs owl:Thing .
+

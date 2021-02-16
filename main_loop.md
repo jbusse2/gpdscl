@@ -33,7 +33,7 @@ import xml.etree.ElementTree as ET
 from rdflib import Graph
 import owlrl
 
-from gpdscl.src.mm2ttl import mm2turtle # collectOwlEntries, searchForOntology
+from gpdscl.src.mm2ttl import mm2turtle
 ```
 
 
@@ -52,8 +52,11 @@ In this early version 0.2 we make use of ugly, but simple scriptig techniques, i
 # do not add the file extension '.mm' to the project name
 
 # project = 'milk'
-# project = 'sandbox'
-project= 'Gewässer_Challenge_2021-01-19'
+project = 'sandbox'
+# project= 'Gewässer_Challenge_2021-01-19'
+
+baseUri = "http://jbusse.de/ontologies/"
+codeTypeList = [] # 'owl'
 ```
 
 Don't change these settings:
@@ -72,9 +75,13 @@ timestr = time.strftime("%Y-%m-%dT%H-%M-%S")
 projectSourceFile = f"{sourceDir}/{project}.mm"
 projectBackupDir  = f"{backupDir}/{project}"
 projectBackupFile = f"{projectBackupDir}/{project}_{timestr}.mm"
+projectOutDir     = f"{ontologyDir}/{project}"
 
 if not os.path.exists(projectBackupDir):
     os.mkdir(projectBackupDir)
+if not os.path.exists(projectOutDir):
+    os.mkdir(projectOutDir)
+    
 copyfile(projectSourceFile, projectBackupFile)
 print(f"backup done from {projectSourceFile} to {projectBackupFile}")
 ```
@@ -85,7 +92,25 @@ print(f"backup done from {projectSourceFile} to {projectBackupFile}")
 ```python
 tree = ET.parse(projectSourceFile)
 root = tree.getroot()
-ontologyString = mm2turtle(root, "http://jbusse.de/ontologies/gpdscl", verbosity=verbosity)
+```
+
+```python
+ontologyString = mm2turtle(
+    root, 
+    baseUri, 
+    verbosity=verbosity,
+    codeTypeList = codeTypeList )
+
+ontologyString = \
+"""@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+""" + ontologyString
+
+
 ```
 
 ### write files
@@ -99,27 +124,33 @@ tree.write(projectSourceFile)
 Export ontology:
 
 ```python
-with open(f"{ontologyDir}/{project}.ttl", 'w') as out:
+with open(f"{projectOutDir}/{project}.ttl", 'w') as out:
     out.write(ontologyString)
 ```
 re-read the ttl file we have exported in the preceding step. (We read it two times in order to get two completely distinct graphs).
 
 ```python
 g = Graph()
-g.parse(f"{ontologyDir}/{project}.ttl", format='ttl')
+g.parse(f"{projectOutDir}/{project}.ttl", format='ttl')
+print(len(g), 'triples')
 ```
 
 ```python
 g2 = Graph()
-g2.parse(f"{ontologyDir}/{project}.ttl", format='ttl')
+g2.parse(f"{projectOutDir}/{project}.ttl", format='ttl')
 owlrl.DeductiveClosure(owlrl.OWLRL_Semantics, axiomatic_triples = False).expand(g2)
+print(len(g2), 'triples')
 ```
 
 ```python
-print(f"# triples before/after inferencing deductive closure with owlrl:\n{len(g)} / {len(g2)}")
+g.serialize(destination  = f"{projectOutDir}/{project}_rdflib.ttl", format='turtle')
+g2.serialize(destination = f"{projectOutDir}/{project}_rdflib_inferred.ttl", format='turtle')
 ```
 
 ```python
-g.serialize(destination  = f"{ontologyDir}/{project}_rdflib.ttl", format='turtle')
-g2.serialize(destination = f"{ontologyDir}/{project}_rdflib_inferred.ttl", format='turtle')
+
+```
+
+```python
+
 ```

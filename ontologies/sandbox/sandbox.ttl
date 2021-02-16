@@ -1,0 +1,150 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+
+
+# ONTOLOGY, predicate        ID_685648358 2021-01-19 12:13:52
+
+@prefix : <http://jbusse.de/ontologies/sandbox#> .
+    @base <http://jbusse.de/ontologies/sandbox#> .
+    <http://jbusse.de/ontologies/sandbox#> rdf:type owl:Ontology .
+    
+
+# ONTOLOGY, object        ID_1936719561 2021-01-20 14:47:50
+
+:Gewässer a owl:Class.
+
+# BY, predicate        ID_1449600205 2021-01-20 14:47:46
+
+:Trophiestufe a owl:ObjectProperty .
+
+# BY, object        ID_1260890827 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_oligotroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+# SOME, predicate        ID_1974595102 2021-01-14 17:01:21
+
+:SOME_Trophiestufe_IS_oligotroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+        owl:onProperty :Trophiestufe ;
+        owl:someValuesFrom :oligotroph ] .
+:Gewässer_AND_SOME_Trophiestufe_IS_oligotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_oligotroph ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_oligotroph ) ] .
+# owl 2 punning
+    :oligotroph a owl:Class ;
+        rdfs:subClassOf :Trophiestufe .
+
+    :oligotroph rdf:type owl:NamedIndividual ;
+        a :oligotroph .
+
+# BY, object        ID_440590526 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_mesotroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+# SOME, predicate        ID_825688094 2021-01-14 17:01:21
+
+:SOME_Trophiestufe_IS_mesotroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+        owl:onProperty :Trophiestufe ;
+        owl:someValuesFrom :mesotroph ] .
+:Gewässer_AND_SOME_Trophiestufe_IS_mesotroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_mesotroph ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_mesotroph ) ] .
+# owl 2 punning
+    :mesotroph a owl:Class ;
+        rdfs:subClassOf :Trophiestufe .
+
+    :mesotroph rdf:type owl:NamedIndividual ;
+        a :mesotroph .
+
+# BY, object        ID_340097028 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_eutroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+# SOME, predicate        ID_1417244006 2021-01-14 17:01:21
+
+:SOME_Trophiestufe_IS_eutroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+        owl:onProperty :Trophiestufe ;
+        owl:someValuesFrom :eutroph ] .
+:Gewässer_AND_SOME_Trophiestufe_IS_eutroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_eutroph ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_eutroph ) ] .
+# owl 2 punning
+    :eutroph a owl:Class ;
+        rdfs:subClassOf :Trophiestufe .
+
+    :eutroph rdf:type owl:NamedIndividual ;
+        a :eutroph .
+
+# BY, object        ID_1784703466 2021-01-15 12:45:53
+
+:Gewässer_Trophiestufe_SOME_hypertroph a owl:Class ;
+            rdfs:subClassOf :Gewässer .
+
+# SOME, predicate        ID_399418016 2021-01-14 17:01:21
+
+:SOME_Trophiestufe_IS_hypertroph a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+        owl:onProperty :Trophiestufe ;
+        owl:someValuesFrom :hypertroph ] .
+:Gewässer_AND_SOME_Trophiestufe_IS_hypertroph a owl:Class ;
+    rdfs:subClassOf :Gewässer_Trophiestufe_SOME_hypertroph ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Gewässer :SOME_Trophiestufe_IS_hypertroph ) ] .
+# owl 2 punning
+    :hypertroph a owl:Class ;
+        rdfs:subClassOf :Trophiestufe .
+
+    :hypertroph rdf:type owl:NamedIndividual ;
+        a :hypertroph .
+
+# ONTOLOGY, object        ID_495095077 2021-02-16 06:43:01
+
+:Straßen a owl:Class.
+
+# BY, predicate        ID_782577626 2021-02-16 06:43:21
+
+:Geschwindigkeit a owl:ObjectProperty .
+
+# BY, object        ID_785939820 2021-02-16 06:43:25
+
+:Autobahn a owl:Class ;
+            rdfs:subClassOf :Straßen .
+
+# AP, predicate        ID_235988510 2021-02-16 06:43:27
+
+skos:definition a owl:AnnotationProperty .
+
+:Autobahn skos:definition "Teststrecke für Rennwagen" .
+
+# EX, predicate        ID_774044550 2021-02-16 06:46:51
+
+
+# EX, object        ID_1723529176 2021-02-16 06:46:55
+
+:A5 a :Autobahn .
+
+# AP, predicate        ID_710616076 2021-02-16 07:50:58
+
+skos:definition a owl:AnnotationProperty .
+
+:A5 skos:definition "Salzburg - München" .
+
+# AP, predicate        ID_854840961 2021-02-16 07:57:03
+
+rdfs:comment a owl:AnnotationProperty .
+
+:A5 rdfs:comment "kann auch eine URL sein?" .

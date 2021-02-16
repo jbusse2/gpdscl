@@ -5,116 +5,43 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-@prefix : <http://jbusse.de/ontologies/gpdscl#> .
-@base <http://jbusse.de/ontologies/gpdscl> .
-<http://jbusse.de/ontologies/gpdscl> rdf:type owl:Ontology .
+
 
 
 # ONTOLOGY, predicate        ID_685648358 2021-01-19 12:13:52
 
-@prefix : <http://jbusse.de/ontology/mm2owl#> .
+@prefix : <http://jbusse.de/ontologies/sandbox#> .
+    @base <http://jbusse.de/ontologies/sandbox#> .
+    <http://jbusse.de/ontologies/sandbox#> rdf:type owl:Ontology .
+    
 
-# ONTOLOGY, object        ID_1936719561 2021-01-19 11:33:46
+# ONTOLOGY, object        ID_1936719561 2021-01-20 06:06:21
 
-:Gewässer a owl:Class.
+:X a owl:Class.
 
-# BY, predicate        ID_1449600205 2021-01-14 17:01:21
+# BY, predicate        ID_1449600205 2021-01-20 05:58:38
 
 :Trophiestufe a owl:ObjectProperty .
 
 # BY, object        ID_1260890827 2021-01-15 12:45:53
 
-:ID_1260890827 a owl:Class ;
-            rdfs:subClassOf :Gewässer .
+:X_Trophiestufe_SOME_oligotroph a owl:Class ;
+            rdfs:subClassOf :X .
 
-# SOME, predicate        ID_1974595102 2021-01-14 17:01:21
-
-:SOME_:Trophiestufe_:oligotroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :oligotroph ] .
-
-    :Gewässer_AND_:SOME_:Trophiestufe_:oligotroph a owl:Class ;
-        rdfs:subClassOf :ID_1260890827 ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_:Trophiestufe_:oligotroph ) ] .
-
-    # owl 2 punning
-    :oligotroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
-        
-    :oligotroph rdf:type owl:NamedIndividual ;
-        a :oligotroph .
 
 # BY, object        ID_440590526 2021-01-15 12:45:53
 
-:ID_440590526 a owl:Class ;
-            rdfs:subClassOf :Gewässer .
+:X_Trophiestufe_SOME_mesotroph a owl:Class ;
+            rdfs:subClassOf :X .
 
-# SOME, predicate        ID_825688094 2021-01-14 17:01:21
-
-:SOME_:Trophiestufe_:mesotroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :mesotroph ] .
-
-    :Gewässer_AND_:SOME_:Trophiestufe_:mesotroph a owl:Class ;
-        rdfs:subClassOf :ID_440590526 ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_:Trophiestufe_:mesotroph ) ] .
-
-    # owl 2 punning
-    :mesotroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
-        
-    :mesotroph rdf:type owl:NamedIndividual ;
-        a :mesotroph .
 
 # BY, object        ID_340097028 2021-01-15 12:45:53
 
-:ID_340097028 a owl:Class ;
-            rdfs:subClassOf :Gewässer .
+:X_Trophiestufe_SOME_eutroph a owl:Class ;
+            rdfs:subClassOf :X .
 
-# SOME, predicate        ID_1417244006 2021-01-14 17:01:21
-
-:SOME_:Trophiestufe_:eutroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :eutroph ] .
-
-    :Gewässer_AND_:SOME_:Trophiestufe_:eutroph a owl:Class ;
-        rdfs:subClassOf :ID_340097028 ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_:Trophiestufe_:eutroph ) ] .
-
-    # owl 2 punning
-    :eutroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
-        
-    :eutroph rdf:type owl:NamedIndividual ;
-        a :eutroph .
 
 # BY, object        ID_1784703466 2021-01-15 12:45:53
 
-:ID_1784703466 a owl:Class ;
-            rdfs:subClassOf :Gewässer .
-
-# SOME, predicate        ID_399418016 2021-01-14 17:01:21
-
-:SOME_:Trophiestufe_:hypertroph a owl:Class ;
-        owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :Trophiestufe ;
-            owl:someValuesFrom :hypertroph ] .
-
-    :Gewässer_AND_:SOME_:Trophiestufe_:hypertroph a owl:Class ;
-        rdfs:subClassOf :ID_1784703466 ;
-        owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Gewässer :SOME_:Trophiestufe_:hypertroph ) ] .
-
-    # owl 2 punning
-    :hypertroph a owl:Class ;
-        rdfs:subClassOf :Trophiestufe .
-        
-    :hypertroph rdf:type owl:NamedIndividual ;
-        a :hypertroph .
-    
+:X_Trophiestufe_SOME_hypertroph a owl:Class ;
+            rdfs:subClassOf :X .

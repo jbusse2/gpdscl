@@ -6,7 +6,7 @@ Genus Proximum Differentia Specifica Classification Language (GPDSCL)
 
 ## Versions
 
-* Version 0.2, 2021-01-18
+* Version 0.26, 2021-02-16
 
 ## Installation
 
