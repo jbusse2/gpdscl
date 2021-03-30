@@ -4,7 +4,7 @@ Genus Proximum Differentia Specifica Classification Language (GPDSCL)
 
 *gpdscl* is a pure Python package for modelling faceted classifications with (here: freeplane-) mindmaps. 
 
-Licence: CC BY-NC-ND 3.0 DE <https://creativecommons.org/licenses/by-nc-nd/3.0/de/>
+License: CC BY-NC-ND 3.0 DE <https://creativecommons.org/licenses/by-nc-nd/3.0/de/>
 
 ## Versions
 
